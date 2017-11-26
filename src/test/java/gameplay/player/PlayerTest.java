@@ -40,7 +40,7 @@ public class PlayerTest {
         Player player = new Player("One", o);
 
         //when - then
-        assertEquals(player.getSign(), CellState.NAUGHT);
+        assertEquals(player.getSign().getClass(), OSign.class);
     }
 
 }

@@ -1,7 +1,5 @@
 package gameplay.player;
 
-
-import gameplay.signs.CellState;
 import gameplay.signs.Sign;
 
 public class Player {
@@ -15,20 +13,25 @@ public class Player {
         this.name = name;
         this.sign = sign;
         points = 0;
-
     }
 
     public int getPoints() {
         return points;
     }
 
-    public CellState getSign() {
-        return sign.getSign();
+    public Sign makeMove() {
+        return sign;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getStringSign() {
+        return sign.toString();
+    }
 
+    public Sign getSign() {
+        return sign;
+    }
 }

@@ -1,6 +1,5 @@
 package gameplay.player;
 
-import gameplay.signs.CellState;
 import gameplay.signs.SignFabric;
 import init.Config;
 
@@ -13,7 +12,7 @@ public class PlayerSwitcher {
     private Player two;
     private List<Player> players;
 
-    public static PlayerSwitcher PlayerSwitcherBuilder(Config<String> users) {
+    public static PlayerSwitcher build(Config<String> users) {
 
         Player one = new Player(users.getConfig().get("pl1name"), SignFabric.getSign(users.getConfig().get("pl1sign")));
         Player two = new Player(users.getConfig().get("pl2name"), SignFabric.getSign(users.getConfig().get("pl2sign")));
@@ -26,13 +25,13 @@ public class PlayerSwitcher {
         players = Arrays.asList(one, two);
     }
 
-    public CellState getActualPlayerSign() {
-        CellState actualSign = players.get(0).getSign();
-        Collections.reverse(players);
-        return actualSign;
-    }
-
     public String getNameOfActualUser() {
         return players.get(0).getName();
+    }
+
+    public Player getActualPlayer() {
+        Player player = players.get(0);
+        Collections.reverse(players);
+        return player;
     }
 }
