@@ -1,5 +1,6 @@
 package init;
 
+import utility.Polish;
 import utility.printing.Printer;
 import utility.scanning.Scanning;
 import utility.validation.IOValidation;
@@ -32,13 +33,13 @@ public class Starter {
 
     private Config takeUserData() {
 
-        String name1 = getUserName("Podaj imie pierwszego gracza", "Imie musi byc 3-21 znakow, spróbuj jeszcze raz");
-        String sign1 = getUserSign("Podaj X czy O", "Imie musi byc 3-21 znakow, spróbuj jeszcze raz");
-        printer.printMsg(String.format("Graczu %s - grasz jako %s", name1, sign1));
+        String name1 = getUserName(Polish.MSG_NAME_ONE, Polish.ERR_NAME);
+        String sign1 = getUserSign(Polish.MSG_SIGN, Polish.ERR_SIGN);
+        printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name1, sign1));
 
-        String name2 = getUserName("Podaj imie drugiego gracza", "Twój znak nie był ani O ani X, więc przydzielamy Ci X");
+        String name2 = getUserName(Polish.MSG_NAME_TWO, Polish.ERR_NAME);
         String sign2 = (sign1.equals("X")) ? "O" : "X";
-        printer.printMsg(String.format("Graczu %s - grasz jako %s", name2, sign2));
+        printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name2, sign2));
 
         return new UsersConfig(name1, name2, sign1, sign2);
 
@@ -46,23 +47,21 @@ public class Starter {
 
     private Config takeBoardData() {
 
-        int horizontal = getNumberFromUser("Podaj szerokość większą lub równą 3 i mniejsza niz 100", "To nie jest >= 3 w związku z tym zdecyduję za Ciebie, że będzie 3", 3);
-        int vertical = getNumberFromUser("Podaj wysokość większą lub równą 3 I mniejsza niz 100", "To nie jest >= 3 w związku z tym zdecyduję za Ciebie, że będzie 3", 3);
-        int winningLength = getNumberFromUser(String.format("Podaj ile znakow do wygranej (minimum 3 ale nie wiecej niz %d", horizontal),
-                                            "To nie spelnia podanych wymagan, wiec zdecyduję za Ciebie, że będzie 3",
-                                            3);
-
-        printer.printMsg(String.format("Twoja tablica ma rozmiar %d x %d - aby wygrać potrzeba %d znaków", horizontal, vertical, winningLength));
+        int horizontal = getNumberFromUser(Polish.MSG_VERTICAL, Polish.ERR_BOARD_SIZE, 3);
+        int vertical = getNumberFromUser(Polish.MSG_HORIZONTAL, Polish.ERR_BOARD_SIZE, 3);
+        printer.printMsgWithoutNewLine(String.format(Polish.MSG_WIN_LENGTH.toString(), Integer.min(horizontal, vertical)));
+        int winningLength = getNumberFromUser(Polish.EMPTY, Polish.ERR_BOARD_SIZE, 3);
+        printer.printMsg(String.format(Polish.MSG_BOARD_COMPLETE.toString(), horizontal, vertical, winningLength));
         return new BoardConfig(horizontal, vertical, winningLength);
     }
 
 
-    private int getNumberFromUser(String msg, String err, int defaultValue) {
+    private int getNumberFromUser(Polish msg, Polish err, int defaultValue) {
         ValidationResult test;
         printer.printMsg(msg);
         String valueTotest = scanner.userInput();
 
-        test = IOValidation.from(NumberTestingMethods::isNumberValid, err).test(valueTotest);
+        test = IOValidation.from(NumberTestingMethods::isNumberValid, err.toString()).test(valueTotest);
         if (!test.isvalid()) {
             printer.printMsg(test.getMessage());
             return defaultValue;
@@ -70,7 +69,7 @@ public class Starter {
         return Integer.valueOf(valueTotest);
     }
 
-    private String getUserSign(String msg, String err) {
+    private String getUserSign(Polish msg, Polish err) {
         String sign;
         ValidationResult test;
 
@@ -78,7 +77,7 @@ public class Starter {
          sign = scanner.userInput().toUpperCase();
 
          test = IOValidation
-                 .from(PlayerTestingMethods::isValidSign, err)
+                 .from(PlayerTestingMethods::isValidSign, err.toString())
                  .test(sign);
             if (!test.isvalid()) {
                 printer.printMsg(test.getMessage());
@@ -87,7 +86,7 @@ public class Starter {
         return sign;
     }
 
-    private String getUserName(String msg, String err) {
+    private String getUserName(Polish msg, Polish err) {
         String name;
         ValidationResult test;
 
@@ -95,7 +94,7 @@ public class Starter {
             printer.printMsg(msg);
             name = scanner.userInput();
             test = IOValidation
-                    .from(PlayerTestingMethods::isValidName, err)
+                    .from(PlayerTestingMethods::isValidName, err.toString())
                     .test(name);
             if (!test.isvalid()) printer.printMsg(test.getMessage());
         } while (!test.isvalid());
@@ -107,3 +106,5 @@ public class Starter {
         printer.printMsg("Zagraj w kółko i krzyżyk");
     }
 }
+
+//TODO: Abstract methods which are getting user input!!!

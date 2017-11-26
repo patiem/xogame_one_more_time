@@ -10,4 +10,10 @@ class TerminalPrinter implements Printer {
     public void printMsgWithFormat(String message, String... fields) {
 
     }
+
+    @Override
+    public void printMsgWithoutNewLine(String message) {
+        System.out.print(message);
+
+    }
 }

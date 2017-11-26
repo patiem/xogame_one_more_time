@@ -6,8 +6,14 @@ class ErrorPrinter implements Printer {
         System.err.println(message);
     }
 
+
     @Override
     public void printMsgWithFormat(String message, String... fields) {
+
+    }
+
+    @Override
+    public void printMsgWithoutNewLine(String msg) {
 
     }
 }
