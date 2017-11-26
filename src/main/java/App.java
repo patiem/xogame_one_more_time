@@ -1,6 +1,11 @@
+//import gameplay.Game;
+import gameplay.GameBuilder;
+import init.Config;
 import init.Starter;
 import utility.printing.PrintManager;
 import utility.scanning.ScannMenager;
+
+import java.util.Map;
 
 public class App {
 
@@ -12,7 +17,10 @@ public class App {
         else if (args.length == 1) PrintManager.setPrinter(args[0]);
 
         Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
-        starter.run();
+        Map<String, Config> config = starter.run();
+//        Game game = new GameBuilder().withPlayers(config.get("users"))
+//                                     .withBoard(config.get("board"))
+//                                     .build();
 
     }
 

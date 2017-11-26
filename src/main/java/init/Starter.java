@@ -27,7 +27,6 @@ public class Starter {
         welcome();
         configurations.put("users", takeUserData());
         configurations.put("board", takeBoardData());
-
         return configurations;
     }
 
@@ -38,7 +37,7 @@ public class Starter {
         printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name1, sign1));
 
         String name2 = getUserName(Polish.MSG_NAME_TWO, Polish.ERR_NAME);
-        String sign2 = (sign1.equals("X")) ? "O" : "X";
+        String sign2 = (sign1.equals("XSign")) ? "OSign" : "XSign";
         printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name2, sign2));
 
         return new UsersConfig(name1, name2, sign1, sign2);
@@ -81,7 +80,7 @@ public class Starter {
                  .test(sign);
             if (!test.isvalid()) {
                 printer.printMsg(test.getMessage());
-                return "X";
+                return "XSign";
             }
         return sign;
     }

@@ -14,7 +14,7 @@ public interface Printer {
 
     default void printMsgWithoutNewLine(Polish msg) {
         printMsgWithoutNewLine(msg.toString());
-    };
+    }
 
 }
 
