@@ -60,6 +60,7 @@ fabric.properties
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
 # *.iml
+xogame.iml
 # modules.xml
 # .idea/misc.xml
 # *.ipr
