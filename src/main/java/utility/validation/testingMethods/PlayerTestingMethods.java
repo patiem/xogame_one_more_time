@@ -7,7 +7,7 @@ public class PlayerTestingMethods {
         return !(s.length() < 3|| s.length() >20 || !s.matches("^[A-Za-z][A-Za-z0-9]*$"));
     }
 
-    public static boolean isValisSign(String s) {
+    public static boolean isValidSign(String s) {
         return s.equals("X") || s.equals("O");
     }
 }
