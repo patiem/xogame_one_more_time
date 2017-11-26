@@ -1,4 +1,6 @@
-import utility.PrintManager;
+import init.Starter;
+import utility.printing.PrintManager;
+import utility.scanning.ScannMenager;
 
 public class App {
 
@@ -9,6 +11,11 @@ public class App {
             PrintManager.setPrinterBuilderToDefault();
         else if (args.length == 1) PrintManager.setPrinter(args[0]);
 
+        Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
+        starter.run();
+
     }
+
+
 
 }
