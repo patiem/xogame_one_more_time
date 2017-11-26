@@ -1,11 +1,11 @@
 package gameplay.move;
 
-import enums.CellState;
-import interfaces.Observer;
+import gameplay.signs.XSign;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class MoveManagerTest {
 
@@ -19,7 +19,6 @@ public class MoveManagerTest {
 
     @BeforeMethod
     public void setup() {
-
         ml = new MoveManager();
     }
 
@@ -64,7 +63,7 @@ public class MoveManagerTest {
     public void addingNewMoveToList_returnTrue() {
 
         //given
-        Move move = new Move(1, CellState.CROSS);
+        Move move = new Move(1, new XSign());
         //when
         //then
         assertTrue(ml.makeMove(move));
@@ -74,9 +73,9 @@ public class MoveManagerTest {
     public void addingMoveToAlreadyOccupiedPosition_throwsException() {
 
         //given
-        Move move = new Move(1, CellState.CROSS);
+        Move move = new Move(1, new XSign());
         ml.makeMove(move);
-        Move move1 = new Move(1, CellState.CROSS);
+        Move move1 = new Move(1, new XSign());
         //when
         ml.makeMove(move1);
         //then

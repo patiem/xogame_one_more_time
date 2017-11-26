@@ -1,33 +1,36 @@
 package gameplay.move;
 
-import enums.CellState;
+import gameplay.signs.Sign;
 
 public class Move {
 
+    private final Sign sign;
     private int position;
-    private CellState cellState;
 
-    public Move(int position, CellState cellState) {
+    public static Move build(int move, Sign actualSign) {
+        return new Move(move, actualSign);
+    }
+
+    public Move(int position, Sign sign) {
 
         this.position = position;
-        if (cellState == CellState.EMPTY) throw new IllegalArgumentException();
-        this.cellState = cellState;
+        this.sign = sign;
     }
 
     public boolean hasSamePosition(Move newMove) {
-
         return this.position == newMove.position;
-    }
-
-    public static Move build(int move, CellState actualSign) {
-        return new Move(move, actualSign);
     }
 
     public int getRealPosition() {
         return position - 1;
     }
 
-    public CellState getState() {
-        return cellState;
+    public String getStringSign() {
+        return sign.show().toString();
+    }
+
+    @Override
+    public String toString() {
+        return sign.toString();
     }
 }

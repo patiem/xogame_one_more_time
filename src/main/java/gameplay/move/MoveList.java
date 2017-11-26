@@ -1,8 +1,5 @@
 package gameplay.move;
 
-import interfaces.Observer;
-import interfaces.Subject;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package interfaces;
+package gameplay.move;
 
 public interface Observer<T> {
 
