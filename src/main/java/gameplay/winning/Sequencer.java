@@ -3,51 +3,42 @@ package gameplay.winning;
 import gameplay.board.Board;
 import gameplay.board.BoardBuilder;
 import gameplay.board.BoardDimension;
-import gameplay.move.Move;
 import gameplay.move.MoveList;
-import interfaces.Observer;
 
-import java.util.List;
-
-public class Sequencer implements Observer<MoveList> {
+public class Sequencer {
 
     private final int jump;
     private BoardDimension bd;
     private int winLength;
     private StringBuilder builder;
     private Board board;
-    private String[] sequences;
 
     public Sequencer(BoardDimension bd) {
         this.bd = bd;
-        this.winLength = bd.getWinningLength();
-        this.jump = bd.getVertical();
+        this.winLength = bd.winningLength();
+        this.jump = bd.horizontal();
     }
 
     public Sequencer(BoardDimension bd, Board board) {
-        this.bd = bd;
-        this.winLength = bd.getWinningLength();
-        this.jump = bd.getVertical();
+        this(bd);
         this.board = board;
+
     }
 
-    private void getAllSequences(int move) {
-
-        sequences = new String[4];
-        sequences[0] = getHorizontal(move);
-        sequences[1] = getVertical(move);
-        sequences[2] = getDiagonalRight(move);
-        sequences[3] = getDiagonalLeft(move);
-    }
-
-    public String[] getSequencesToValidate() {
-        return sequences;
-    }
-
-    @Override
-    public void update(MoveList moves) {
+    public Sequence sequencesToCheck(MoveList moves) {
         getUpdatedBoard(moves);
-        getAllSequences(moves.getLastMovePosition());
+        return getAllSequences(moves.getLastMovePosition());
+    }
+
+    private Sequence getAllSequences(int move) {
+
+        Sequence sequences = new Sequence();
+        sequences.add(getHorizontal(move));
+        sequences.add(getVertical(move));
+        sequences.add(getDiagonalRight(move));
+        sequences.add(getDiagonalLeft(move));
+
+        return sequences;
     }
 
     private void getUpdatedBoard(MoveList moves) {
@@ -82,12 +73,12 @@ public class Sequencer implements Observer<MoveList> {
         int endRange = move + jump * (winLength - 1);
 
         for (int i = startRange; i <= endRange; i += jump) {
-            if(i > 0 && i <= bd.getSize()) builder.append(board.getCell(i));
+            if(i > 0 && i <= bd.size()) builder.append(board.getCell(i));
         }
         return builder.toString();
     }
 
-    String getDiagonalRigh2t(int move) {
+    String getDiagonalRight(int move) {
 
         builder = new StringBuilder();
 
@@ -98,26 +89,26 @@ public class Sequencer implements Observer<MoveList> {
         int eRange = (winLength - 1 > downRow) ? move + jump * downRow + downRow : move + jump * (winLength - 1) + winLength - 1;
 
         for (int i = stRange; i <= eRange; i += jump + 1) {
-            if(i > 0 && i <= bd.getSize())
+            if(i > 0 && i <= bd.size())
                 builder.append(board.getCell(i));
         }
 
         return builder.toString();
     }
 
-    String getDiagonalRight(int move) {
+    String getDiagonalRight2(int move) {
 
         builder = new StringBuilder();
 
         while (move - jump - 1 > 0) {
             move = move - jump - 1;
             if (move % jump == 0) {
-                move = move + jump + 1;
+                //move = move + jump + 1;
                 break;
             }
         }
 
-        while (move <= bd.getSize()) {
+        while (move <= bd.size()) {
             builder.append(board.getCell(move ));
             move += (jump + 1);
         }
@@ -137,7 +128,7 @@ public class Sequencer implements Observer<MoveList> {
             }
         }
 
-        while (move < bd.getSize()) {
+        while (move < bd.size()) {
             builder.append(board.getCell(move));
             if (move % jump == 1) break;
             move += jump -1;

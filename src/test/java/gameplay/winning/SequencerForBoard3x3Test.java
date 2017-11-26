@@ -5,6 +5,10 @@ import gameplay.board.BoardBuilder;
 import gameplay.board.BoardDimension;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utility.intValues.Horizontal;
+import utility.intValues.IntValue;
+import utility.intValues.Size;
+import utility.intValues.WinLength;
 
 import static org.testng.Assert.assertEquals;
 
@@ -16,7 +20,10 @@ public class SequencerForBoard3x3Test {
 
     @BeforeMethod
     public void setup() {
-        bd = new BoardDimension(3,3,3);
+        IntValue value = new Horizontal(3);
+        IntValue size = new Size(3 * 3);
+        IntValue win = new WinLength(3);
+        bd = new BoardDimension(value, size, win);
         board = new BoardBuilder(bd).viaArrayList().fillUpArraysListWithNumbers().build();
         board.update(1, "O");
         board.update(3, "X");

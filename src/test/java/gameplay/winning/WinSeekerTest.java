@@ -3,8 +3,13 @@ package gameplay.winning;
 import gameplay.board.BoardDimension;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utility.intValues.Horizontal;
+import utility.intValues.IntValue;
+import utility.intValues.Size;
+import utility.intValues.WinLength;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class WinSeekerTest {
 
@@ -13,7 +18,10 @@ public class WinSeekerTest {
 
     @BeforeMethod
     public void setup() {
-        bd = new BoardDimension(3 , 3, 3);
+        IntValue value = new Horizontal(5);
+        IntValue size = new Size(5 * 5);
+        IntValue win = new WinLength(3);
+        bd = new BoardDimension(value, size, win);
     }
 
     @Test
@@ -77,7 +85,11 @@ public class WinSeekerTest {
     public void sequenceOn7LengthBoardFor4WinningLength() {
 
         //given
-        winSeeker = new WinSeeker(new BoardDimension(10, 10, 4));
+        IntValue value = new Horizontal(10);
+        IntValue size = new Size(10 * 10);
+        IntValue win = new WinLength(4);
+        bd = new BoardDimension(value, size, win);
+        winSeeker = new WinSeeker(new BoardDimension(value, size, win));
         String sequence = "XXXOXXO";
         String sequence2 = "XOXXXXO";
         String sequence3 = "OOOOXXX";
