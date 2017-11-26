@@ -14,10 +14,21 @@ public enum Polish {
     MSG_WIN_LENGTH("Podaj ile znakow do wygranej (minimum 3 ale nie wiecej niz %d"),
     MSG_BOARD_COMPLETE("Twoja tablica ma rozmiar %d x %d - aby wygrać potrzeba %d znaków"),
 
+    MSG_RND_COUNT("Rozpoczyna się runda %d"),
+    MSG_RND_PLAYER("Zaczyna gracz %s"),
+
+    MSG_PLAYER("Graczu %s "),
+    MSG_CELL_NUMBER("Podaj numer komórki, na której chcesz postawic swój znak\nLub dowolną literę aby wyjść z gry"),
+
+    MSG_EXIT_GAME("Gra zostaje zakończona"),
 
     ERR_NAME("Imie musi mieć gługośc między 3 a 20 znaków, spróbuj jeszcze raz"),
     ERR_SIGN("Twój znak nie był ani O ani X, więc przydzielamy Ci X"),
-    ERR_BOARD_SIZE("To nie jest >= 3 w związku z tym zdecyduję za Ciebie, że będzie 3");
+    ERR_BOARD_SIZE("To nie jest >= 3 w związku z tym zdecyduję za Ciebie, że będzie 3"),
+    ERR_CELL_NUMBER("Spróbujmy jeszcze raz - tym razem traf w tablicę\n" +
+                            "Podaj numer komórki, na której chcesz postawic swój znak\n" +
+                            "Lub dowolną literę aby wyjść z gry"),
+    ERR_CELL_OCCUPIED("Pole zajęte - spróbuj jeszcze raz");
 
     public String msg;
 

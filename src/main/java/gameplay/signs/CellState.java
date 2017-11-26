@@ -3,8 +3,8 @@ package gameplay.signs;
 public enum CellState {
 
     EMPTY("e"),
-    NAUGHT("OSign"),
-    CROSS("XSign");
+    NAUGHT("O"),
+    CROSS("X");
 
     public String sign;
 
