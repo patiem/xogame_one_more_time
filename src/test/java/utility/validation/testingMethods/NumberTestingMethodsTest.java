@@ -7,43 +7,37 @@ import static org.testng.Assert.*;
 public class NumberTestingMethodsTest {
 
     @Test
-    public void isValidName_ReturnsFalseWhenStringIsLT3() {
+    public void isNumberValid_ReturnsFalseWhenStringIsNotNumber() {
         //given
         String s = "a";
         //when //then
-        assertFalse(PlayerTestingMethods.isValidName(s));
+        assertFalse(NumberTestingMethods.isNumberValid(s));
     }
 
     @Test
-    public void isValidName_ReturnsFalseWhenStringIsGT20() {
+    public void isNumberValid_ReturnsFalseWhenNumberIsLT3() {
         //given
-        String s = "a01234567890123456789";
+        String s = "2";
         //when //then
-        assertFalse(PlayerTestingMethods.isValidName(s));
+        assertFalse(NumberTestingMethods.isNumberValid(s));
     }
 
     @Test
-    public void isValidName_ReturnsFalseWhenStringDoesntStartWithLetter() {
+    public void isNumberValid_ReturnsFalseWhenNumberIsGT100() {
         //given
-        String s = "1a3";
+        String s = "101";
         //when //then
-        assertFalse(PlayerTestingMethods.isValidName(s));
-    }
-    @Test
-    public void isValidName_ReturnsFalseWhenStringContainsSpecialCharaters() {
-        //given
-        String s = "aaaa:aaa";
-        //when //then
-        assertFalse(PlayerTestingMethods.isValidName(s));
+        assertFalse(NumberTestingMethods.isNumberValid(s));
     }
 
     @Test
-    public void isValidName_ReturnsTrueWhenNameIsProper() {
+    public void isNumberValid_ReturnsTrueWhenNumberIsBetween3And100() {
         //given
-        String s = "abcd";
+        String s = "50";
         //when //then
-        assertTrue(PlayerTestingMethods.isValidName(s));
+        assertTrue(NumberTestingMethods.isNumberValid(s));
     }
+
 
 
 
