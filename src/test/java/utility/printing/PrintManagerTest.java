@@ -1,6 +1,9 @@
-package utility;
+package utility.printing;
 
 import org.testng.annotations.Test;
+import utility.printing.ErrorPrinter;
+import utility.printing.PrintManager;
+import utility.printing.TerminalPrinter;
 
 import static org.testng.Assert.*;
 
@@ -15,7 +18,7 @@ public class PrintManagerTest {
         assertEquals(PrintManager.getPrinter().getClass(), TerminalPrinter.class);
     }
 
-    //@Test
+    @Test
     public void ifUserGetsWrong_printerIsTerminal() {
 
         //given //when
@@ -23,7 +26,7 @@ public class PrintManagerTest {
         assertEquals(PrintManager.getPrinter().getClass(), TerminalPrinter.class);
     }
 
-    //@Test
+    @Test
     public void ifUserGetsER_printerIsError() {
 
         //given //when
@@ -31,7 +34,7 @@ public class PrintManagerTest {
         assertEquals(PrintManager.getPrinter().getClass(), ErrorPrinter.class);
     }
 
-    //@Test
+    @Test
     public void ifUserGetsTR_printerIsTerminal() {
 
         //given //when
