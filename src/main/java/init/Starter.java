@@ -37,7 +37,7 @@ public class Starter {
         printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name1, sign1));
 
         String name2 = getUserName(Polish.MSG_NAME_TWO, Polish.ERR_NAME);
-        String sign2 = (sign1.equals("XSign")) ? "OSign" : "XSign";
+        String sign2 = (sign1.equals("X")) ? "O" : "X";
         printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name2, sign2));
 
         return new UsersConfig(name1, name2, sign1, sign2);

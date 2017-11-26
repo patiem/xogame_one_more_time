@@ -1,10 +1,9 @@
-package gameplay;
+package gameplay.round;
 
 import gameplay.board.BoardDimension;
 import gameplay.board.BoardPrinter;
 import gameplay.move.MoveManager;
 import gameplay.player.PlayerSwitcher;
-import gameplay.round.RoundManager;
 import gameplay.winning.RoundArbiter;
 import init.Config;
 

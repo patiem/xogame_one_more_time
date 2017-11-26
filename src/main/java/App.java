@@ -1,5 +1,7 @@
 //import gameplay.Game;
-import gameplay.GameBuilder;
+import gameplay.Game;
+import gameplay.round.RoundManagerBuilder;
+import gameplay.round.RoundManager;
 import init.Config;
 import init.Starter;
 import utility.printing.PrintManager;
@@ -18,10 +20,19 @@ public class App {
 
         Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
         Map<String, Config> config = starter.run();
-//        Game game = new GameBuilder().withPlayers(config.get("users"))
-//                                     .withBoard(config.get("board"))
-//                                     .build();
 
+        int defaultRoundNumber = 3;
+
+        RoundManager roundMenager = new RoundManagerBuilder(config.get("board"))
+                                    .withPlayers(config.get("users"))
+                                    .withDefaultRoundNumber()
+                                    .withMoveManager()
+                                    .withBoardPrinter()
+                                    .withWinSeeker()
+                                    .build();
+
+        Game game = new Game(defaultRoundNumber, roundMenager);
+        game.run();
     }
 
 
