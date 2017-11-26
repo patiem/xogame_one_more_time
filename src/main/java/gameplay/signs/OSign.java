@@ -1,9 +1,9 @@
 package gameplay.signs;
 
-public class X implements Sign {
+public class OSign implements Sign {
 
     @Override
     public CellState getSign() {
-        return CellState.CROSS;
+        return CellState.NAUGHT;
     }
 }
