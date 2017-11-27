@@ -20,6 +20,8 @@ public enum Polish {
     MSG_PLAYER("Graczu %s "),
     MSG_CELL_NUMBER("Podaj numer komórki, na której chcesz postawic swój znak\nLub dowolną literę aby wyjść z gry"),
 
+    MSG_WIN("Graczu %s %s - wygrałeś tą rundę"),
+
     MSG_EXIT_GAME("Gra zostaje zakończona"),
 
     ERR_NAME("Imie musi mieć gługośc między 3 a 20 znaków, spróbuj jeszcze raz"),

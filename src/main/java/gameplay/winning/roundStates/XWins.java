@@ -1,4 +1,4 @@
-package gameplay.winning;
+package gameplay.winning.roundStates;
 
 public class XWins implements WinningCondition {
 

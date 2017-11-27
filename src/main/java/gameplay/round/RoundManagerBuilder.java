@@ -6,13 +6,15 @@ import gameplay.move.MoveManager;
 import gameplay.player.PlayerSwitcher;
 import gameplay.winning.RoundArbiter;
 import init.Config;
+import utility.printing.PrintManager;
+import utility.scanning.ScannMenager;
 
 public class RoundManagerBuilder {
 
     BoardDimension bd;
     PlayerSwitcher playerSwitcher;
     MoveManager moveManager;
-    RoundArbiter winSeeker;
+    RoundArbiter roundArbiter;
     BoardPrinter boardPrinter;
     private int roundNumber;
 
@@ -33,7 +35,7 @@ public class RoundManagerBuilder {
     }
 
     public RoundManagerBuilder withWinSeeker() {
-        winSeeker = new RoundArbiter(bd);
+        roundArbiter = new RoundArbiter(bd);
         return this;
     }
 
@@ -55,8 +57,12 @@ public class RoundManagerBuilder {
 
     public RoundManager build() {
         moveManager.register(boardPrinter);
-        moveManager.register(winSeeker);
+        moveManager.register(roundArbiter);
 
-        return new RoundManager(roundNumber, bd, playerSwitcher, moveManager, winSeeker, boardPrinter);
+        RoundManager rm = new RoundManager(roundNumber, bd, playerSwitcher, moveManager, roundArbiter, boardPrinter);
+        roundArbiter.register(rm);
+        rm.setPrinter(PrintManager.getPrinter());
+        rm.setScanner(ScannMenager.getScanner());
+        return rm;
     }
 }
