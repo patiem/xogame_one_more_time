@@ -34,7 +34,6 @@ public class BoardBuilder {
 
     public BoardBuilder fillBoardWithMoves(MoveList moves) {
         for (Move move : moves.getList()) {
-            System.out.println(move.toString());
             al.set(move.getRealPosition(), move.toString());
         }
         return this;

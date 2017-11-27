@@ -34,7 +34,4 @@ public class App {
         Game game = new Game(defaultRoundNumber, roundMenager);
         game.run();
     }
-
-
-
 }
