@@ -7,10 +7,9 @@ import gameplay.move.MoveManager;
 import gameplay.move.Observer;
 import gameplay.player.Player;
 import gameplay.player.PlayerSwitcher;
-import gameplay.winning.RoundArbiter;
-import gameplay.winning.roundStates.RoundState;
-import gameplay.winning.roundStates.WinFactory;
-import gameplay.winning.roundStates.WinningCondition;
+import gameplay.winning.winTypes.RoundState;
+import gameplay.winning.winTypes.WinFactory;
+import gameplay.winning.winTypes.WinningCondition;
 import utility.Polish;
 import utility.printing.Printer;
 import utility.scanning.Scanning;
@@ -48,7 +47,7 @@ public class RoundManager implements Observer<RoundState>{
 
         runRound();
 
-        return WinFactory.getWin(roundState, actualPlayer.getName());
+        return WinFactory.getWin(roundState, actualPlayer);
     }
 
     private void runRound() {

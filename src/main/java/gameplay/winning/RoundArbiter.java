@@ -1,15 +1,11 @@
 package gameplay.winning;
 
 import gameplay.board.BoardDimension;
-import gameplay.move.Move;
 import gameplay.move.MoveList;
 import gameplay.move.Observer;
 import gameplay.move.Subject;
-import gameplay.signs.Sign;
 import gameplay.signs.XSign;
-import gameplay.winning.roundStates.RoundState;
-import gameplay.winning.roundStates.WinFactory;
-import gameplay.winning.roundStates.WinningCondition;
+import gameplay.winning.winTypes.RoundState;
 
 import java.util.ArrayList;
 import java.util.List;

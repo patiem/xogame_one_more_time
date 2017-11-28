@@ -1,4 +1,4 @@
-package gameplay.winning.roundStates;
+package gameplay.winning.winTypes;
 
 import utility.Polish;
 

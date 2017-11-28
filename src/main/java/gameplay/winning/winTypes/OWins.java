@@ -1,13 +1,14 @@
-package gameplay.winning.roundStates;
+package gameplay.winning.winTypes;
 
+import gameplay.player.Player;
 import utility.Polish;
 
 public class OWins implements WinningCondition {
 
-    private String playerName;
+    private Player player;
 
-    public OWins(String playerName) {
-        this.playerName = playerName;
+    public OWins(Player player) {
+        this.player = player;
     }
 
     @Override
@@ -22,6 +23,6 @@ public class OWins implements WinningCondition {
 
     @Override
     public String toString() {
-        return String.format(Polish.MSG_WIN.toString(), playerName);
+        return String.format(Polish.MSG_WIN.toString(), player.getName());
     }
 }

@@ -1,13 +1,14 @@
-package gameplay.winning.roundStates;
+package gameplay.winning.winTypes;
 
+import gameplay.player.Player;
 import utility.Polish;
 
 public class XWins implements WinningCondition {
 
-    private String playerName;
+    private Player player;
 
-    public XWins(String playerName) {
-        this.playerName = playerName;
+    public XWins(Player player) {
+        this.player = player;
     }
 
     @Override
@@ -22,6 +23,6 @@ public class XWins implements WinningCondition {
 
     @Override
     public String toString() {
-        return String.format(Polish.MSG_WIN.toString(), playerName);
+        return String.format(Polish.MSG_WIN.toString(), player.getName());
     }
 }
