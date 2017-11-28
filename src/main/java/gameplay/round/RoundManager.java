@@ -17,25 +17,21 @@ import utility.scanning.Scanning;
 
 public class RoundManager implements Observer<RoundState>{
 
-    private int roundsNumber;
     private BoardDimension bd;
     private PlayerSwitcher playerSwitcher;
     private MoveManager moveManager;
-    private RoundArbiter roundArbiter;
+
     private BoardPrinter boardPrinter;
     private RoundState roundState;
     private Printer printer;
     private Scanning scanner;
     private Player actualPlayer;
 
-    public RoundManager(int rounds, BoardDimension bd, PlayerSwitcher playerSwitcher, MoveManager moveManager,
-                        RoundArbiter roundArbiter, BoardPrinter boardPrinter) {
+    public RoundManager(BoardDimension bd, PlayerSwitcher playerSwitcher, MoveManager moveManager, BoardPrinter boardPrinter) {
 
-        this.roundsNumber = rounds;
         this.bd = bd;
         this.playerSwitcher = playerSwitcher;
         this.moveManager = moveManager;
-        this.roundArbiter = roundArbiter;
         this.boardPrinter = boardPrinter;
     }
 
@@ -48,12 +44,10 @@ public class RoundManager implements Observer<RoundState>{
 
         roundState = RoundState.PLAYING;
         boardPrinter.printEmptyBoard();
+        moveManager.clean();
+
         runRound();
-        if(roundState == RoundState.WIN) {
-            printer.printMsg(String.format(Polish.MSG_WIN.toString(), actualPlayer.getName(), actualPlayer.getStringSign()));
-            return WinFactory.getWin(actualPlayer);
-        }
-        return WinFactory.getWin(roundState);
+        return WinFactory.getWin(roundState, actualPlayer.getName());
     }
 
     private void runRound() {

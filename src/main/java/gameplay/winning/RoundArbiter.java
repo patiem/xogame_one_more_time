@@ -1,10 +1,14 @@
 package gameplay.winning;
 
 import gameplay.board.BoardDimension;
+import gameplay.move.Move;
 import gameplay.move.MoveList;
 import gameplay.move.Observer;
 import gameplay.move.Subject;
+import gameplay.signs.Sign;
+import gameplay.signs.XSign;
 import gameplay.winning.roundStates.RoundState;
+import gameplay.winning.roundStates.WinFactory;
 import gameplay.winning.roundStates.WinningCondition;
 
 import java.util.ArrayList;
@@ -14,12 +18,12 @@ public class RoundArbiter implements Observer<MoveList>, Subject{
 
     private final WinSeeker winSeeker;
     private final Sequencer sequencer;
-    private BoardDimension bd;
+    private final int maxCountOfMoves;
     private List<Observer> observers;
-    private RoundState roundState = RoundState.PLAYING;
+    private RoundState roundState;
 
     public RoundArbiter(BoardDimension bd) {
-        this.bd = bd;
+        maxCountOfMoves = bd.size();
         winSeeker = new WinSeeker(bd);
         sequencer = new Sequencer(bd);
         observers = new ArrayList<>();
@@ -27,8 +31,10 @@ public class RoundArbiter implements Observer<MoveList>, Subject{
 
     @Override
     public void update(MoveList moves) {
-        Sequence seqs = sequencer.sequencesToCheck(moves);
-        if(winSeeker.isWinningMove(seqs)) roundState = RoundState.WIN;
+        roundState = RoundState.PLAYING;
+        if(winSeeker.isWinningMove(sequencer.sequencesToCheck(moves)))
+            roundState = (moves.tellWhoMadeLastMove() instanceof XSign) ? RoundState.XWINS : RoundState.OWINS;
+        else if(moves.isListFull(maxCountOfMoves)) roundState = RoundState.DRAW;
         notifyObservers();
     }
 
@@ -49,3 +55,5 @@ public class RoundArbiter implements Observer<MoveList>, Subject{
     }
 }
 
+
+//TODo: remove bd as field!

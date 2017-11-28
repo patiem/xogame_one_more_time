@@ -1,5 +1,7 @@
 package gameplay.winning.roundStates;
 
+import utility.Polish;
+
 public class Draw implements WinningCondition {
 
     @Override
@@ -10,5 +12,10 @@ public class Draw implements WinningCondition {
     @Override
     public int getPointsForO() {
         return 1;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(Polish.MSG_DRAW.toString());
     }
 }

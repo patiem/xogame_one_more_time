@@ -16,7 +16,6 @@ public class RoundManagerBuilder {
     MoveManager moveManager;
     RoundArbiter roundArbiter;
     BoardPrinter boardPrinter;
-    private int roundNumber;
 
 
     public RoundManagerBuilder withPlayers(Config config) {
@@ -34,7 +33,7 @@ public class RoundManagerBuilder {
         return this;
     }
 
-    public RoundManagerBuilder withWinSeeker() {
+    public RoundManagerBuilder withRoundArbiter() {
         roundArbiter = new RoundArbiter(bd);
         return this;
     }
@@ -45,21 +44,10 @@ public class RoundManagerBuilder {
         return this;
     }
 
-    public RoundManagerBuilder withRoundNumber(int roundNumber) {
-        this.roundNumber = roundNumber;
-        return this;
-    }
-
-    public RoundManagerBuilder withDefaultRoundNumber() {
-        this.roundNumber = 3;
-        return this;
-    }
-
     public RoundManager build() {
         moveManager.register(boardPrinter);
         moveManager.register(roundArbiter);
-
-        RoundManager rm = new RoundManager(roundNumber, bd, playerSwitcher, moveManager, roundArbiter, boardPrinter);
+        RoundManager rm = new RoundManager(bd, playerSwitcher, moveManager, boardPrinter);
         roundArbiter.register(rm);
         rm.setPrinter(PrintManager.getPrinter());
         rm.setScanner(ScannMenager.getScanner());

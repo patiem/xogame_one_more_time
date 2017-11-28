@@ -2,6 +2,7 @@ package gameplay;
 
 import gameplay.board.BoardDimension;
 import gameplay.round.RoundManager;
+import gameplay.winning.roundStates.WinningCondition;
 import utility.Polish;
 import utility.printing.PrintManager;
 import utility.printing.Printer;
@@ -32,7 +33,8 @@ public class Game {
         for (roundCount = 1; roundCount <= roundNumber; roundCount++) {
             printer.printMsg(String.format(Polish.MSG_RND_COUNT.toString(), roundCount));
             printer.printMsg(String.format(Polish.MSG_RND_PLAYER.toString(), roundMenager.actualPlayerName()));
-            roundMenager.startOneGame();
+            WinningCondition win = roundMenager.startOneGame();
+            printer.printMsg(win.toString());
             //TODO przyda sie klaska trzymajaca wyniki i gracza:
 
         }

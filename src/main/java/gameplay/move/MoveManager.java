@@ -21,6 +21,10 @@ public class MoveManager implements Subject{
         return true;
     }
 
+    public void clean() {
+        moves = new MoveList();
+    }
+
     @Override
     public void register(Observer obj) {
         if(obj == null) throw new NullPointerException("Null Observer");
@@ -36,4 +40,6 @@ public class MoveManager implements Subject{
     public void notifyObservers() {
         for (Observer obj : observers) obj.update(moves);
     }
+
+
 }

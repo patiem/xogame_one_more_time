@@ -1,5 +1,7 @@
 package gameplay.move;
 
+import gameplay.signs.Sign;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,6 @@ public class MoveList {
     }
 
     void addMoveToList(Move move) {
-        //if(moveCount == )
         moveList.add(move);
         lastMove = move;
         moveCount += 1;
@@ -27,12 +28,20 @@ public class MoveList {
         return false;
     }
 
+    public boolean isListFull(int maxMoveCount) {
+        return maxMoveCount == moveCount;
+    }
+
     public List<Move> getList() {
         return moveList;
     }
 
     public int getLastMovePosition() {
         return lastMove.getRealPosition() + 1;
+    }
+
+    public Sign tellWhoMadeLastMove() {
+        return lastMove.getSign();
     }
 
 }

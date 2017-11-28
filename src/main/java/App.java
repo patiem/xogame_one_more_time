@@ -1,4 +1,3 @@
-//import gameplay.Game;
 import gameplay.Game;
 import gameplay.round.RoundManagerBuilder;
 import gameplay.round.RoundManager;
@@ -25,10 +24,9 @@ public class App {
 
         RoundManager roundMenager = new RoundManagerBuilder(config.get("board"))
                                     .withPlayers(config.get("users"))
-                                    .withDefaultRoundNumber()
                                     .withMoveManager()
                                     .withBoardPrinter()
-                                    .withWinSeeker()
+                                    .withRoundArbiter()
                                     .build();
 
         Game game = new Game(defaultRoundNumber, roundMenager);

@@ -25,8 +25,8 @@ public class Move {
         return position - 1;
     }
 
-    public String getStringSign() {
-        return sign.show().toString();
+    public Sign getSign() {
+        return sign;
     }
 
     @Override
