@@ -9,6 +9,8 @@ class ErrorPrinter implements Printer {
 
     @Override
     public void printMsgWithoutNewLine(String msg) {
-
+        {
+            System.err.print(msg);
+        }
     }
 }

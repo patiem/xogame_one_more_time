@@ -16,6 +16,10 @@ public class App {
         if(args.length == 0)
             PrintManager.setPrinterBuilderToDefault();
         else if (args.length == 1) PrintManager.setPrinter(args[0]);
+        else if (args.length == 2) {
+            PrintManager.setPrinter(args[0]);
+            ScannMenager.setScanner(args[1]);
+        }
 
         Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
         Map<String, Config> config = starter.run();

@@ -14,7 +14,7 @@ public enum Polish {
     MSG_WIN_LENGTH("Podaj ile znakow do wygranej (minimum 3 ale nie wiecej niz %d"),
     MSG_BOARD_COMPLETE("Twoja tablica ma rozmiar %d x %d - aby wygrać potrzeba %d znaków"),
 
-    MSG_RND_COUNT("Rozpoczyna się runda %d"),
+    MSG_RND_COUNT("---------Rozpoczyna się runda %d----------"),
     MSG_RND_PLAYER("Zaczyna gracz %s"),
 
     MSG_PLAYER("Graczu %s "),

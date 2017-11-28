@@ -2,7 +2,7 @@ package gameplay;
 
 import gameplay.board.BoardDimension;
 import gameplay.round.RoundManager;
-import gameplay.winning.roundStates.WinningCondition;
+import gameplay.winning.winTypes.WinningCondition;
 import utility.Polish;
 import utility.printing.PrintManager;
 import utility.printing.Printer;
