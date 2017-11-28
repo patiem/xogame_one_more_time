@@ -46,7 +46,8 @@ public class RoundManager implements Observer<RoundState>{
         moveManager.clean();
 
         runRound();
-
+        if(roundState == RoundState.DRAW) printer.printMsg(Polish.MSG_DRAW);
+        else printer.printMsg(String.format(Polish.MSG_WIN.toString(), actualPlayer.getName()));
         return WinFactory.getWin(roundState, actualPlayer);
     }
 
@@ -56,15 +57,9 @@ public class RoundManager implements Observer<RoundState>{
 
             printer.printMsg(String.format(Polish.MSG_PLAYER.toString(), actualPlayer.getStringSign()));
             printer.printMsg(Polish.MSG_CELL_NUMBER);
-            try {
 
-                int move = takeMoveFromUser();
-                tryToMakeMove(actualPlayer, move);
-
-            } catch ( NumberFormatException e) {
-                printer.printMsg(Polish.MSG_EXIT_GAME);
-                roundState = RoundState.EXIT;
-            }
+            int move = takeMoveFromUser();
+            tryToMakeMove(actualPlayer, move);
         }
     }
 

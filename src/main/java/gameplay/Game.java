@@ -17,26 +17,31 @@ public class Game {
 
     private int roundNumber;
     private RoundManager roundMenager;
+    private ScoreBoard scoreBoard;
 
 
-    public Game(int defaultRoundNumber, RoundManager roundMenager) {
+    public Game(int defaultRoundNumber, RoundManager roundMenager, ScoreBoard scoreBoard) {
 
         this.roundNumber = defaultRoundNumber;
         this.roundMenager = roundMenager;
+        this.scoreBoard = scoreBoard;
         scanner = ScannMenager.getScanner();
         printer = PrintManager.getPrinter();
     }
 
 
     public void run() {
-        int roundCount;
-        for (roundCount = 1; roundCount <= roundNumber; roundCount++) {
-            printer.printMsg(String.format(Polish.MSG_RND_COUNT.toString(), roundCount));
-            printer.printMsg(String.format(Polish.MSG_RND_PLAYER.toString(), roundMenager.actualPlayerName()));
-            WinningCondition win = roundMenager.startOneGame();
-            printer.printMsg(win.toString());
-            //TODO przyda sie klaska trzymajaca wyniki i gracza:
-
+        try {
+            int roundCount;
+            for (roundCount = 1; roundCount <= roundNumber; roundCount++) {
+                printer.printMsg(String.format(Polish.MSG_RND_COUNT.toString(), roundCount));
+                printer.printMsg(String.format(Polish.MSG_RND_PLAYER.toString(), roundMenager.actualPlayerName()));
+                scoreBoard.addWin(roundMenager.startOneGame());
+                printer.printMsg(scoreBoard.toString());
+            }
+            printer.printMsg(scoreBoard.getWinner());
+        } catch (NumberFormatException e) {
+            printer.printMsg(Polish.MSG_EXIT_GAME);
         }
     }
 }

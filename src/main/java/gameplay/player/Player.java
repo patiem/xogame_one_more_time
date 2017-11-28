@@ -34,4 +34,8 @@ public class Player {
     public Sign getSign() {
         return sign;
     }
+
+    public void increasePoints(int points) {
+        this.points += points;
+    }
 }

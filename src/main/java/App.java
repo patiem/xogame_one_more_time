@@ -1,11 +1,15 @@
 import gameplay.Game;
+import gameplay.ScoreBoard;
+import gameplay.ScoreBoardBuilder;
 import gameplay.round.RoundManagerBuilder;
 import gameplay.round.RoundManager;
 import init.Config;
 import init.Starter;
+import utility.printing.FilePrinter;
 import utility.printing.PrintManager;
 import utility.scanning.ScannMenager;
 
+import java.io.FileWriter;
 import java.util.Map;
 
 public class App {
@@ -33,7 +37,11 @@ public class App {
                                     .withRoundArbiter()
                                     .build();
 
-        Game game = new Game(defaultRoundNumber, roundMenager);
+        ScoreBoard scoreBoard = new ScoreBoardBuilder().withPlayersFromConfig(config.get("users")).build();
+
+        Game game = new Game(defaultRoundNumber, roundMenager, scoreBoard);
         game.run();
+        PrintManager.close();
     }
 }
+
