@@ -7,11 +7,6 @@ class TerminalPrinter implements Printer {
     }
 
     @Override
-    public void printMsgWithFormat(String message, String... fields) {
-
-    }
-
-    @Override
     public void printMsgWithoutNewLine(String message) {
         System.out.print(message);
 

@@ -12,10 +12,6 @@ public class PrintManager {
     }
 
     public static void setPrinter(String arg) {
-//        if(printer != null) {
-//            printer.printMsg("Drukarka już została wybrana");
-//            return;
-//        }
 
         switch (arg.toUpperCase()) {
             case "TR":

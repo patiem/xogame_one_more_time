@@ -47,6 +47,7 @@ public class RoundManager implements Observer<RoundState>{
         moveManager.clean();
 
         runRound();
+
         return WinFactory.getWin(roundState, actualPlayer.getName());
     }
 
