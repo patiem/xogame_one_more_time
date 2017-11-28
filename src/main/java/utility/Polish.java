@@ -22,6 +22,7 @@ public enum Polish {
 
     MSG_WIN("Graczu %s - wygrałeś tą rundę"),
     MSG_DRAW("Gra zakońcozna remisem"),
+    MSG_SCORE("Gracz %s X : %d punktów ||| Gracz %s O : %d punktów"),
 
     MSG_EXIT_GAME("Gra zostaje zakończona"),
 
@@ -31,7 +32,31 @@ public enum Polish {
     ERR_CELL_NUMBER("Spróbujmy jeszcze raz - tym razem traf w tablicę\n" +
                             "Podaj numer komórki, na której chcesz postawic swój znak\n" +
                             "Lub dowolną literę aby wyjść z gry"),
-    ERR_CELL_OCCUPIED("Pole zajęte - spróbuj jeszcze raz");
+    ERR_CELL_OCCUPIED("Pole zajęte - spróbuj jeszcze raz"),
+
+    WIN_X(  "\nXX THE WINNER IS  XX\n" +
+            "XXXXXXXXXXXXXXXXXXXX\n" +
+            "XXXXX  XXXXXX  XXXXX\n" +
+            "XXXXXX  XXXX  XXXXXX\n" +
+            "XXXXXXX  XX  XXXXXXX\n" +
+            "XXXXXXXX    XXXXXXXX\n" +
+            "XXXXXXX  XX  XXXXXXX\n" +
+            "XXXXXX  XXXX  XXXXXX\n" +
+            "XXXXX  XXXXXX  XXXXX\n" +
+            "XXXXXXXXXXXXXXXXXXXX"),
+
+    WIN_O(  "\nOO THE WINNER IS  OO\n" +
+            "OOOOOOOOOOOOOOOOOOOO\n" +
+            "OOOOOOO      OOOOOOO\n" +
+            "OOOOO  OOOOOO  OOOOO\n" +
+            "OOOO  OOOOOOOO  OOOO\n" +
+            "OOOO  OOOOOOOO  OOOO\n" +
+            "OOOO  OOOOOOOO  OOOO\n" +
+            "OOOOO  OOOOOO  OOOOO\n" +
+            "OOOOOOO      OOOOOOO\n" +
+            "OOOOOOOOOOOOOOOOOOOO"),
+
+    DRAW("\nREMIS");
 
     public String msg;
 

@@ -1,7 +1,5 @@
 package utility.scanning;
 
-import java.io.FileNotFoundException;
-
 
 public class ScannMenager {
 

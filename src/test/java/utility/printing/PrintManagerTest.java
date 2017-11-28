@@ -9,15 +9,6 @@ import static org.testng.Assert.*;
 
 public class PrintManagerTest {
 
-
-    @Test
-    public void defaultPrinterIsTerminal() {
-
-        //given //when
-        PrintManager.setPrinterBuilderToDefault();
-        assertEquals(PrintManager.getPrinter().getClass(), TerminalPrinter.class);
-    }
-
     @Test
     public void ifUserGetsWrong_printerIsTerminal() {
 
