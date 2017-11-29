@@ -1,6 +1,5 @@
-package utility.validation.testingMethods;
+package utility.validation.testingmethods;
 
-import gameplay.signs.Sign;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
