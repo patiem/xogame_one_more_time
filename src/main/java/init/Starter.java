@@ -5,8 +5,8 @@ import utility.printing.Printer;
 import utility.scanning.Scanning;
 import utility.validation.IOValidation;
 import utility.validation.ValidationResult;
-import utility.validation.testingMethods.NumberTestingMethods;
-import utility.validation.testingMethods.PlayerTestingMethods;
+import utility.validation.testingmethods.NumberTestingMethods;
+import utility.validation.testingmethods.PlayerTestingMethods;
 
 import java.util.HashMap;
 import java.util.Map;

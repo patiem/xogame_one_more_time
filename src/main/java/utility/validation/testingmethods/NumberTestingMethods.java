@@ -1,4 +1,4 @@
-package utility.validation.testingMethods;
+package utility.validation.testingmethods;
 
 public class NumberTestingMethods {
 
