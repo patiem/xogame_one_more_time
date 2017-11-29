@@ -42,10 +42,4 @@ public enum Language {
         WIN_O,
         DRAW
 
-
-//    @Override
-//    public String toString() {
-//        return ;
-//    }
-
 }

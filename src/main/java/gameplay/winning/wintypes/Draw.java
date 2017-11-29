@@ -4,8 +4,8 @@ import utility.language.Language;
 
 public class Draw implements WinningCondition {
 
-    int xScore = 1;
-    int oScore = 1;
+    static final int xScore = 1;
+    static final int oScore = 1;
 
     @Override
     public int getPointsForX() {

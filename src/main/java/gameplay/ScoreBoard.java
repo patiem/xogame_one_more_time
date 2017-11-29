@@ -1,9 +1,7 @@
 package gameplay;
 
 import gameplay.player.Player;
-import gameplay.winning.wintypes.OWins;
 import gameplay.winning.wintypes.WinningCondition;
-import gameplay.winning.wintypes.XWins;
 import utility.language.Language;
 
 import java.util.ArrayList;
@@ -26,8 +24,8 @@ public class ScoreBoard {
     }
 
     private void recountPointsForPlayer(WinningCondition wc) {
-         playerX.increasePoints(wc.getPointsForX());
-         playerO.increasePoints(wc.getPointsForO());
+        playerX.increasePoints(wc.getPointsForX());
+        playerO.increasePoints(wc.getPointsForO());
 
     }
 

@@ -6,8 +6,8 @@ import utility.language.Language;
 public class OWins implements WinningCondition {
 
     private Player player;
-    final int xScore = 0;
-    final int oScore = 3;
+    static final int xScore = 0;
+    static final int oScore = 3;
 
     public OWins(Player player) {
         this.player = player;
