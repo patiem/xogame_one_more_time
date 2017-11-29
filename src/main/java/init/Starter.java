@@ -63,7 +63,7 @@ public class Starter {
 
         test = IOValidation.from(NumberTestingMethods::isNumberValid, err.toString()).test(valueTotest);
         if (!test.isvalid()) {
-            printer.printMsg(test.getMessage());
+            printer.printMsg(err);
             return defaultValue;
         }
         return Integer.valueOf(valueTotest);
@@ -80,7 +80,7 @@ public class Starter {
                  .from(PlayerTestingMethods::isValidSign, err.toString())
                  .test(sign);
             if (!test.isvalid()) {
-                printer.printMsg(test.getMessage());
+                printer.printMsg(err);
                 return "X";
             }
         return sign;
@@ -96,7 +96,7 @@ public class Starter {
             test = IOValidation
                     .from(PlayerTestingMethods::isValidName, err.toString())
                     .test(name);
-            if (!test.isvalid()) printer.printMsg(test.getMessage());
+            if (!test.isvalid()) printer.printMsg(err);
         } while (!test.isvalid());
 
         return name;
@@ -107,4 +107,3 @@ public class Starter {
     }
 }
 
-//TODO: Abstract methods which are getting user input!!!

@@ -25,32 +25,19 @@ public class FilePrinter implements Printer {
     }
 
     @Override
-    public void printMsg(String message) {
-        writer.println(message);
-    }
-
-    @Override
-    public void printMsgWithoutNewLine(String msg) {
-        writer.print(msg);
-    }
-
-//    @Override
-//    public void printMsg(Language... msg) {
-//        StringBuilder sb = new StringBuilder();
-//        for (Language subtitle : msg)  sb.append(subtitles.getString(subtitle.name()));
-//        printMsg(sb.toString());
-//    }
-
-    @Override
     public void setLanguage(ResourceBundle subtitles) {
         this.subtitles = subtitles;
     }
 
     @Override
+    public void printMsg(String message) {
+        writer.println(message);
+    }
+
+    @Override
     public void printMsg(Language langMsg, String... blanks) {
-        if(blanks.length == 0) writer.println(subtitles.getString(langMsg.toString()));
-        else writer.println(String.format(subtitles.getString(langMsg.toString()), blanks));
-  //      else if(blanks.length == 2) writer.println(String.format(subtitles.getString(langMsg.toString()), blanks[0], blanks[1]));
+        if(blanks.length == 0) printMsg(subtitles.getString(langMsg.toString()));
+        else printMsg(String.format(subtitles.getString(langMsg.toString()), blanks));
     }
 
     void close() {

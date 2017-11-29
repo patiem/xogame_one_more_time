@@ -18,7 +18,8 @@ public class App {
 
         try {
             setupUtilities(args);
-            setupGameStart();
+            setupGame().run();
+            PrintManager.close();
 
         } catch (IllegalArgumentException e) {
             System.out.print(e.getMessage());
@@ -26,7 +27,7 @@ public class App {
 
     }
 
-    private static void setupGameStart() {
+    private static Game setupGame() {
         Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
         Map<String, Config> config = starter.run();
 
@@ -41,9 +42,8 @@ public class App {
 
         ScoreBoard scoreBoard = new ScoreBoardBuilder().withPlayersFromConfig(config.get("users")).build();
 
-        Game game = new Game(defaultRoundNumber, roundManager, scoreBoard);
-        game.run();
-        PrintManager.close();
+        return new Game(defaultRoundNumber, roundManager, scoreBoard);
+
     }
 
     private static void setupUtilities(String[] args) throws IllegalArgumentException {
@@ -60,7 +60,7 @@ public class App {
             PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
             ScannMenager.setScanner(args[2]);
         } else {
-            throw new IllegalArgumentException("Read Readme before to run app correctly");
+            throw new IllegalArgumentException("Read Readme before running this app");
         }
     }
 }
