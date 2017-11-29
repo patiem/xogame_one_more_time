@@ -13,6 +13,3 @@ public class SignFabric {
         }
     }
 }
-
-
-//TODO:  what to do with null when default?

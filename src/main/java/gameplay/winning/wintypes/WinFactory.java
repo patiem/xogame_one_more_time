@@ -1,4 +1,4 @@
-package gameplay.winning.winTypes;
+package gameplay.winning.wintypes;
 
 import gameplay.player.Player;
 import gameplay.signs.Sign;

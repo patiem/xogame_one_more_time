@@ -2,8 +2,6 @@ package gameplay.board;
 
 import gameplay.move.Move;
 import gameplay.move.MoveList;
-import gameplay.move.Observer;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +38,7 @@ public class BoardBuilder {
     }
 
     public Board build() {
-        return new Board(al, boardDimension);
+        return new Board(al);
     }
 
 }

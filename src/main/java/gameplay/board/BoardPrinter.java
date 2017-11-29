@@ -26,11 +26,6 @@ public class BoardPrinter implements Observer<MoveList> {
         printer = PrintManager.getPrinter();
     }
 
-//    public String getPrettyBoard() {
-//        setup();
-//        return makePrettyBoard();
-//    }
-
     String makePrettyBoard(Board board) {
         sb = new StringBuilder();
         sb.append(line);
@@ -67,27 +62,27 @@ public class BoardPrinter implements Observer<MoveList> {
     }
 
     private String makePipes() {
-        StringBuilder pipes = new StringBuilder();
+        sb = new StringBuilder();
         List<String> downLineList2 = IntStream.range(0, bd.horizontal()).mapToObj(a -> "|").collect(Collectors.toList());
-        pipes.append(String.join("    ", downLineList2));
-        pipes.append("    |\n");
-        return pipes.toString();
+        sb.append(String.join("    ", downLineList2));
+        sb.append("    |\n");
+        return sb.toString();
     }
 
     private String makeLine() {
-        StringBuilder line = new StringBuilder(" ");
-        List<String> LineList = IntStream.range(0, bd.horizontal()).mapToObj(a -> "____").collect(Collectors.toList());
-        line.append(String.join(" ", LineList));
-        line.append(" \n");
-        return line.toString();
+        sb = new StringBuilder(" ");
+        List<String> lineList = IntStream.range(0, bd.horizontal()).mapToObj(a -> "____").collect(Collectors.toList());
+        sb.append(String.join(" ", lineList));
+        sb.append(" \n");
+        return sb.toString();
     }
 
     private String makeInline() {
-        StringBuilder line = new StringBuilder();
+        sb = new StringBuilder();
         List<String> downLineList = IntStream.range(0, bd.horizontal()).mapToObj(a -> "|____").collect(Collectors.toList());
-        line.append(String.join("", downLineList));
-        line.append("|\n");
-        return line.toString();
+        sb.append(String.join("", downLineList));
+        sb.append("|\n");
+        return sb.toString();
     }
 
     @Override
@@ -103,6 +98,3 @@ public class BoardPrinter implements Observer<MoveList> {
         printer.printMsg(makePrettyBoard(board));
     }
 }
-
-//TODO: Abstarct setup methods!!!
-//todo: print empty and update to simillar!!

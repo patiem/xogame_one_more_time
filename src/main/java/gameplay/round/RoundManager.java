@@ -7,9 +7,9 @@ import gameplay.move.MoveManager;
 import gameplay.move.Observer;
 import gameplay.player.Player;
 import gameplay.player.PlayerSwitcher;
-import gameplay.winning.winTypes.RoundState;
-import gameplay.winning.winTypes.WinFactory;
-import gameplay.winning.winTypes.WinningCondition;
+import gameplay.winning.wintypes.RoundState;
+import gameplay.winning.wintypes.WinFactory;
+import gameplay.winning.wintypes.WinningCondition;
 import utility.language.Language;
 import utility.printing.Printer;
 import utility.scanning.Scanning;
@@ -95,6 +95,3 @@ public class RoundManager implements Observer<RoundState>{
         this.roundState = roundState;
     }
 }
-
-
-//TODO: jakiś obserwtor, zeby wyjsc calkiem z gry?

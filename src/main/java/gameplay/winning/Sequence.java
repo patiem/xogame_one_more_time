@@ -3,6 +3,7 @@ package gameplay.winning;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Sequence implements Iterator<String>{
 
@@ -20,12 +21,12 @@ public class Sequence implements Iterator<String>{
 
     @Override
     public boolean hasNext() {
-        if(index < sequences.size()) return true;
-        return false;
+        return index < sequences.size();
     }
 
     @Override
     public String next() {
+        if (index >= sequences.size()) throw new NoSuchElementException();
         return sequences.get(index++);
     }
 }

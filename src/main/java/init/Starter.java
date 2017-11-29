@@ -39,8 +39,9 @@ public class Starter {
         String name2 = getUserName(Language.MSG_NAME_TWO, Language.ERR_NAME);
         String sign2 = (sign1.equals("X")) ? "O" : "X";
         printer.printMsg(Language.MSG_PLAYER_COMPLETE, name2, sign2);
+        String start = getUserSign(Language.MSG_ST_PL, Language.ERR_SIGN);
 
-        return new UsersConfig(name1, name2, sign1, sign2);
+        return new UsersConfig(name1, name2, sign1, sign2, start);
 
     }
 

@@ -1,24 +1,26 @@
-package gameplay.winning.winTypes;
+package gameplay.winning.wintypes;
 
 import gameplay.player.Player;
 import utility.language.Language;
 
-public class XWins implements WinningCondition {
+public class OWins implements WinningCondition {
 
     private Player player;
+    final int xScore = 0;
+    final int oScore = 3;
 
-    public XWins(Player player) {
+    public OWins(Player player) {
         this.player = player;
     }
 
     @Override
     public int getPointsForX() {
-        return 3;
+        return xScore;
     }
 
     @Override
     public int getPointsForO() {
-        return 0;
+        return oScore;
     }
 
     @Override

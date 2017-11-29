@@ -15,7 +15,7 @@ public class UsersConfigTest {
     public void getConfigCreatesMap() {
 
         //given
-        Config<String> config = new UsersConfig("One", "Two", "X", "O");
+        Config<String> config = new UsersConfig("One", "Two", "X", "O", "X");
 
         //when - then
         assertTrue(config.getConfig() instanceof Map);
@@ -27,7 +27,7 @@ public class UsersConfigTest {
     public void configHasMapWithFourFieldsWithKeys() {
 
         //given
-        Config<String> config = new UsersConfig("One", "Two", "X", "O");
+        Config<String> config = new UsersConfig("One", "Two", "X", "O", "X");
 
         //when - then
         assertTrue(config.getConfig().containsKey("pl1name"));
@@ -44,7 +44,9 @@ public class UsersConfigTest {
         String name2 = "Two";
         String sign1 = "X";
         String sign2 = "O";
-        Config<String> config = new UsersConfig(name1, name2, sign1, sign2);
+        String start = "X";
+
+        Config<String> config = new UsersConfig(name1, name2, sign1, sign2, start);
 
         //when - then
         assertEquals(config.getConfig().get("pl1name"), name1);

@@ -1,6 +1,5 @@
 package gameplay.player;
 
-import gameplay.signs.CellState;
 import gameplay.signs.OSign;
 import gameplay.signs.Sign;
 import gameplay.signs.XSign;

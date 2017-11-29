@@ -1,17 +1,20 @@
-package gameplay.winning.winTypes;
+package gameplay.winning.wintypes;
 
 import utility.language.Language;
 
 public class Draw implements WinningCondition {
 
+    int xScore = 1;
+    int oScore = 1;
+
     @Override
     public int getPointsForX() {
-        return 1;
+        return xScore;
     }
 
     @Override
     public int getPointsForO() {
-        return 1;
+        return oScore;
     }
 
     @Override

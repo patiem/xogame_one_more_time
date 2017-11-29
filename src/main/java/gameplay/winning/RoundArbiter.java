@@ -5,7 +5,7 @@ import gameplay.move.MoveList;
 import gameplay.move.Observer;
 import gameplay.move.Subject;
 import gameplay.signs.XSign;
-import gameplay.winning.winTypes.RoundState;
+import gameplay.winning.wintypes.RoundState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +50,3 @@ public class RoundArbiter implements Observer<MoveList>, Subject{
         for (Observer obj : observers) obj.update(roundState);
     }
 }
-
-
-//TODo: remove bd as field!

@@ -4,12 +4,10 @@ import java.util.List;
 
 public class Board {
 
-    private final BoardDimension boardDimension;
-    private List<String> cellList;
+        private List<String> cellList;
 
-    public Board(List<String> al, BoardDimension bd) {
+    public Board(List<String> al) {
         cellList = al;
-        boardDimension = bd;
     }
 
     public boolean update(int move, String sign) {
@@ -35,7 +33,4 @@ public class Board {
     public String getCell(int position) {
         return cellList.get(position - 1);
     }
-
 }
-
-//TODO: do I need getBoard method?

@@ -96,26 +96,6 @@ public class Sequencer {
         return builder.toString();
     }
 
-    String getDiagonalRight2(int move) {
-
-        builder = new StringBuilder();
-
-        while (move - jump - 1 > 0) {
-            move = move - jump - 1;
-            if (move % jump == 0) {
-                //move = move + jump + 1;
-                break;
-            }
-        }
-
-        while (move <= bd.size()) {
-            builder.append(board.getCell(move ));
-            move += (jump + 1);
-        }
-        return builder.toString();
-    }
-
-
     String getDiagonalLeft(int move) {
 
         builder = new StringBuilder();
@@ -136,4 +116,3 @@ public class Sequencer {
         return builder.toString();
     }
 }
- //TODO: Zmienić pierwszą diagonalkę

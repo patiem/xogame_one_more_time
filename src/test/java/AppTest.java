@@ -1,8 +1,8 @@
+import app.App;
 import org.apache.commons.io.input.ReversedLinesFileReader;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
@@ -15,7 +15,8 @@ public class AppTest {
         //given
         String file = "game1.txt";
         String print = "FL";
-        String[] args = {print, file};
+        String language = "EN";
+        String[] args = {print, language, file};
         String lastLine = "XXXXXXXXXXXXXXXXXXXX";
         //when
         App.main(args);

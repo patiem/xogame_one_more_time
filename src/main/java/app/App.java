@@ -1,3 +1,5 @@
+package app;
+
 import gameplay.Game;
 import gameplay.ScoreBoard;
 import gameplay.ScoreBoardBuilder;
@@ -10,9 +12,12 @@ import utility.printing.PrintManager;
 import utility.scanning.ScannMenager;
 
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class App {
 
+    private static final Logger LOGGER = Logger.getLogger( App.class.getName() );
 
     public static void main(String[] args) {
 
@@ -22,9 +27,8 @@ public class App {
             PrintManager.close();
 
         } catch (IllegalArgumentException e) {
-            System.out.print(e.getMessage());
+            LOGGER.log(Level.FINE, e.getMessage());
         }
-
     }
 
     private static Game setupGame() {
@@ -46,7 +50,7 @@ public class App {
 
     }
 
-    private static void setupUtilities(String[] args) throws IllegalArgumentException {
+    private static void setupUtilities(String[] args) {
         if(args.length == 0) {
             PrintManager.setPrinterBuilderToDefault();
             PrintManager.setLanguage(LanguageLoader.loadLanguage("PL"));

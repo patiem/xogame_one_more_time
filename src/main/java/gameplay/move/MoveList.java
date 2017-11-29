@@ -7,23 +7,23 @@ import java.util.List;
 
 public class MoveList {
 
-    List<Move> moveList;
+    List<Move> movesHistory;
     Move lastMove;
     Integer moveCount;
 
     public MoveList() {
-        moveList = new ArrayList<>();
+        movesHistory = new ArrayList<>();
         moveCount = 0;
     }
 
     void addMoveToList(Move move) {
-        moveList.add(move);
+        movesHistory.add(move);
         lastMove = move;
         moveCount += 1;
     }
 
     boolean checkIfFieldIsOccupied(Move newMove) {
-        for (Move move : moveList)
+        for (Move move : movesHistory)
             if (move.hasSamePosition(newMove)) return true;
         return false;
     }
@@ -33,7 +33,7 @@ public class MoveList {
     }
 
     public List<Move> getList() {
-        return moveList;
+        return movesHistory;
     }
 
     public int getLastMovePosition() {

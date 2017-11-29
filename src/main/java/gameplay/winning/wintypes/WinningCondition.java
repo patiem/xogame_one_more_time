@@ -1,4 +1,4 @@
-package gameplay.winning.winTypes;
+package gameplay.winning.wintypes;
 
 public interface WinningCondition {
 

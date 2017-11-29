@@ -12,6 +12,7 @@ public enum Language {
         MSG_NAME_TWO,
         MSG_SIGN,
         MSG_PLAYER_COMPLETE,
+        MSG_ST_PL,
 
         MSG_VERTICAL,
         MSG_HORIZONTAL,
