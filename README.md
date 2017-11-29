@@ -2,7 +2,7 @@
 
 ### Bez parametrów
 
-### Z parametrami - nalezy podać obydwa dla terminala i języka
+### Z parametrami - nalezy podać obydwa w kolejności: druk<spacja>język
 
 ##### -Z parameterem TR - drukowanie do terminala
 ##### -Z parameterem ER - drukowanie strumieniem błędów

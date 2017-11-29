@@ -9,7 +9,7 @@ public class WinLength implements IntValue {
     }
 
     @Override
-    public int intValue() {
+    public Integer intValue() {
         return value;
     }
 }

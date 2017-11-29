@@ -1,6 +1,9 @@
 package utility.printing;
 
+import utility.language.Language;
+
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class PrintManager {
 
@@ -18,22 +21,22 @@ public class PrintManager {
         switch (arg.toUpperCase()) {
             case "TR":
                 printer = new TerminalPrinter();
-                printer.printMsg("Twoją drukarką jest Terminal");
+                //printer.printMsg(Language.MSG_PRINT_TR);
                 break;
             case "ER":
                 printer = new ErrorPrinter();
-                printer.printMsg("Twoją drukarką jest Strumień Błędów");
+                //printer.printMsg(Language.MSG_PRINT_ER);
                 break;
             case "FL":
                 try {
-                    printer = new FilePrinter();
+                    printer = FilePrinter.build();
                 } catch (IOException e) {
                     System.out.print(e.getMessage());
                     printer = new TerminalPrinter();
-                    printer.printMsg("Coś poszło nie tak, Twoją drukarką jest plik");
+                    //printer.printMsg(Language.ERR_PRINT.toString() + Language.MSG_PRINT_TR.toString() );
                 }
+                //printer.printMsg(Language.MSG_PRINT_FL);
 
-                printer.printMsg("Twoją drukarką jest Terminal");
                 break;
             default:
                 printer = new TerminalPrinter();
@@ -52,5 +55,9 @@ public class PrintManager {
         } catch (Exception e) {
 
         }
+    }
+
+    public static void setLanguage(ResourceBundle language) {
+        printer.setLanguage(language);
     }
 }

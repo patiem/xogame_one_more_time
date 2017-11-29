@@ -16,9 +16,10 @@ public class PlayerTest {
         //given
         Sign x = new XSign();
         Player player = new Player("One", x);
+        Integer startPoints = 0;
 
         //when - then
-        assertEquals(player.getPoints(), 0);
+        assertEquals(player.getPoints(), startPoints);
     }
 
     @Test

@@ -5,11 +5,10 @@ import gameplay.round.RoundManagerBuilder;
 import gameplay.round.RoundManager;
 import init.Config;
 import init.Starter;
-import utility.printing.FilePrinter;
+import utility.language.LanguageLoader;
 import utility.printing.PrintManager;
 import utility.scanning.ScannMenager;
 
-import java.io.FileWriter;
 import java.util.Map;
 
 public class App {
@@ -17,20 +16,23 @@ public class App {
 
     public static void main(String[] args) {
 
-        if(args.length == 0)
-            PrintManager.setPrinterBuilderToDefault();
-        else if (args.length == 1) PrintManager.setPrinter(args[0]);
-        else if (args.length == 2) {
-            PrintManager.setPrinter(args[0]);
-            ScannMenager.setScanner(args[1]);
+        try {
+            setupUtilities(args);
+            setupGameStart();
+
+        } catch (IllegalArgumentException e) {
+            System.out.print(e.getMessage());
         }
 
+    }
+
+    private static void setupGameStart() {
         Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
         Map<String, Config> config = starter.run();
 
         int defaultRoundNumber = 3;
 
-        RoundManager roundMenager = new RoundManagerBuilder(config.get("board"))
+        RoundManager roundManager = new RoundManagerBuilder(config.get("board"))
                                     .withPlayers(config.get("users"))
                                     .withMoveManager()
                                     .withBoardPrinter()
@@ -39,9 +41,27 @@ public class App {
 
         ScoreBoard scoreBoard = new ScoreBoardBuilder().withPlayersFromConfig(config.get("users")).build();
 
-        Game game = new Game(defaultRoundNumber, roundMenager, scoreBoard);
+        Game game = new Game(defaultRoundNumber, roundManager, scoreBoard);
         game.run();
         PrintManager.close();
+    }
+
+    private static void setupUtilities(String[] args) throws IllegalArgumentException {
+        if(args.length == 0) {
+            PrintManager.setPrinterBuilderToDefault();
+            PrintManager.setLanguage(LanguageLoader.loadLanguage("PL"));
+        }
+        else if (args.length == 2) {
+            PrintManager.setPrinter(args[0]);
+            PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
+        }
+        else if (args.length == 3) {
+            PrintManager.setPrinter(args[0]);
+            PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
+            ScannMenager.setScanner(args[2]);
+        } else {
+            throw new IllegalArgumentException("Read Readme before to run app correctly");
+        }
     }
 }
 

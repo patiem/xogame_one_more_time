@@ -1,6 +1,6 @@
 package init;
 
-import utility.Polish;
+import utility.language.Language;
 import utility.printing.Printer;
 import utility.scanning.Scanning;
 import utility.validation.IOValidation;
@@ -32,13 +32,13 @@ public class Starter {
 
     private Config takeUserData() {
 
-        String name1 = getUserName(Polish.MSG_NAME_ONE, Polish.ERR_NAME);
-        String sign1 = getUserSign(Polish.MSG_SIGN, Polish.ERR_SIGN);
-        printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name1, sign1));
+        String name1 = getUserName(Language.MSG_NAME_ONE, Language.ERR_NAME);
+        String sign1 = getUserSign(Language.MSG_SIGN, Language.ERR_SIGN);
+        printer.printMsg(Language.MSG_PLAYER_COMPLETE, name1, sign1);
 
-        String name2 = getUserName(Polish.MSG_NAME_TWO, Polish.ERR_NAME);
+        String name2 = getUserName(Language.MSG_NAME_TWO, Language.ERR_NAME);
         String sign2 = (sign1.equals("X")) ? "O" : "X";
-        printer.printMsg(String.format(Polish.MSG_PLAYER_COMPLETE.toString(), name2, sign2));
+        printer.printMsg(Language.MSG_PLAYER_COMPLETE, name2, sign2);
 
         return new UsersConfig(name1, name2, sign1, sign2);
 
@@ -46,16 +46,17 @@ public class Starter {
 
     private Config takeBoardData() {
 
-        int horizontal = getNumberFromUser(Polish.MSG_VERTICAL, Polish.ERR_BOARD_SIZE, 3);
-        int vertical = getNumberFromUser(Polish.MSG_HORIZONTAL, Polish.ERR_BOARD_SIZE, 3);
-        printer.printMsgWithoutNewLine(String.format(Polish.MSG_WIN_LENGTH.toString(), Integer.min(horizontal, vertical)));
-        int winningLength = getNumberFromUser(Polish.EMPTY, Polish.ERR_BOARD_SIZE, 3);
-        printer.printMsg(String.format(Polish.MSG_BOARD_COMPLETE.toString(), horizontal, vertical, winningLength));
+        Integer horizontal = getNumberFromUser(Language.MSG_VERTICAL, Language.ERR_BOARD_SIZE, 3);
+        Integer vertical = getNumberFromUser(Language.MSG_HORIZONTAL, Language.ERR_BOARD_SIZE, 3);
+        Integer min = Integer.min(horizontal, vertical);
+        printer.printMsg(Language.MSG_WIN_LENGTH, min.toString());
+        Integer winningLength = getNumberFromUser(Language.EMPTY, Language.ERR_BOARD_SIZE, 3);
+        printer.printMsg(Language.MSG_BOARD_COMPLETE, horizontal.toString(), vertical.toString(), winningLength.toString());
         return new BoardConfig(horizontal, vertical, winningLength);
     }
 
 
-    private int getNumberFromUser(Polish msg, Polish err, int defaultValue) {
+    private int getNumberFromUser(Language msg, Language err, int defaultValue) {
         ValidationResult test;
         printer.printMsg(msg);
         String valueTotest = scanner.userInput();
@@ -68,7 +69,7 @@ public class Starter {
         return Integer.valueOf(valueTotest);
     }
 
-    private String getUserSign(Polish msg, Polish err) {
+    private String getUserSign(Language msg, Language err) {
         String sign;
         ValidationResult test;
 
@@ -80,12 +81,12 @@ public class Starter {
                  .test(sign);
             if (!test.isvalid()) {
                 printer.printMsg(test.getMessage());
-                return "XSign";
+                return "X";
             }
         return sign;
     }
 
-    private String getUserName(Polish msg, Polish err) {
+    private String getUserName(Language msg, Language err) {
         String name;
         ValidationResult test;
 
@@ -102,7 +103,7 @@ public class Starter {
     }
 
     private void welcome() {
-        printer.printMsg("Zagraj w kółko i krzyżyk");
+        printer.printMsg(Language.MSG_START);
     }
 }
 

@@ -9,7 +9,7 @@ public class Horizontal implements IntValue {
     }
 
     @Override
-    public int intValue() {
+    public Integer intValue() {
         return value;
     }
 }

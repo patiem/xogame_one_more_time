@@ -1,8 +1,13 @@
-package utility;
+package utility.language;
 
-public enum Polish {
+public enum Polish2 {
 
     EMPTY(""),
+    MSG_START("Zagraj w kółko i krzyżyk"),
+
+    MSG_PRINT_TR("Twoją drukarką jest Terminal"),
+    MSG_PRINT_ER("Twoją drukarką jest Strumień Błędów"),
+    MSG_PRINT_FL("Twoją drukarką jest plik"),
 
     MSG_NAME_ONE("Podaj imie pierwszego gracza"),
     MSG_NAME_TWO("Podaj imie drugiego gracza"),
@@ -33,6 +38,7 @@ public enum Polish {
                             "Podaj numer komórki, na której chcesz postawic swój znak\n" +
                             "Lub dowolną literę aby wyjść z gry"),
     ERR_CELL_OCCUPIED("Pole zajęte - spróbuj jeszcze raz"),
+    ERR_PRINT("Coś poszło nie tak. "),
 
     WIN_X(  "\nXX THE WINNER IS  XX\n" +
             "XXXXXXXXXXXXXXXXXXXX\n" +
@@ -60,7 +66,7 @@ public enum Polish {
 
     public String msg;
 
-    Polish(String sign) {
+    Polish2(String sign) {
         this.msg = sign;
     }
 

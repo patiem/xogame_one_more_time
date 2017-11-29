@@ -1,6 +1,8 @@
 package utility.printing;
 
-import utility.Polish;
+import utility.language.Language;
+
+import java.util.ResourceBundle;
 
 public interface Printer {
 
@@ -8,10 +10,11 @@ public interface Printer {
 
     void printMsgWithoutNewLine(String msg);
 
-    default void printMsg(Polish msg) {
-        printMsg(msg.toString());
-    }
+//    void printMsg(Language... msg);
 
+    void setLanguage(ResourceBundle subtitles);
+
+    void printMsg(Language msgPlayerComplete, String... blanks);
 }
 
 

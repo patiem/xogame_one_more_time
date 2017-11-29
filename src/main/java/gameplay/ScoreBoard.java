@@ -1,9 +1,8 @@
 package gameplay;
 
 import gameplay.player.Player;
-import gameplay.signs.Sign;
 import gameplay.winning.winTypes.WinningCondition;
-import utility.Polish;
+import utility.language.Language;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +28,12 @@ public class ScoreBoard {
          playerO.increasePoints(wc.getPointsForO());
     }
 
-    @Override
-    public String toString() {
-        return String.format(Polish.MSG_SCORE.toString(),
-                playerX.getName(), playerX.getPoints(), playerO.getName(), playerO.getPoints());
+    public String[] gameResult() {
+        return new String[] {playerX.getName(), playerX.getPoints().toString(), playerO.getName(), playerO.getPoints().toString()};
     }
 
-    public Polish getWinner() {
-        if (playerX.getPoints() == playerO.getPoints()) return Polish.DRAW;
-        return (playerX.getPoints() > playerO.getPoints()) ? Polish.WIN_X : Polish.WIN_O;
+    public Language getWinner() {
+        if (playerX.getPoints() == playerO.getPoints()) return Language.DRAW;
+        return (playerX.getPoints() > playerO.getPoints()) ? Language.WIN_X : Language.WIN_O;
     }
 }

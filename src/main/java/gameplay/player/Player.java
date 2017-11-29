@@ -6,7 +6,7 @@ public class Player {
 
     private final String name;
     private final Sign sign;
-    private int points;
+    private Integer points;
 
     public Player(String name, Sign sign) {
 
@@ -15,7 +15,7 @@ public class Player {
         points = 0;
     }
 
-    public int getPoints() {
+    public Integer getPoints() {
         return points;
     }
 

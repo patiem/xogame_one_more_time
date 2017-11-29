@@ -10,7 +10,7 @@ import gameplay.player.PlayerSwitcher;
 import gameplay.winning.winTypes.RoundState;
 import gameplay.winning.winTypes.WinFactory;
 import gameplay.winning.winTypes.WinningCondition;
-import utility.Polish;
+import utility.language.Language;
 import utility.printing.Printer;
 import utility.scanning.Scanning;
 
@@ -46,8 +46,9 @@ public class RoundManager implements Observer<RoundState>{
         moveManager.clean();
 
         runRound();
-        if(roundState == RoundState.DRAW) printer.printMsg(Polish.MSG_DRAW);
-        else printer.printMsg(String.format(Polish.MSG_WIN.toString(), actualPlayer.getName()));
+
+        if(roundState == RoundState.DRAW) printer.printMsg(Language.MSG_DRAW);
+        else printer.printMsg(Language.MSG_WIN, actualPlayer.getName());
         return WinFactory.getWin(roundState, actualPlayer);
     }
 
@@ -55,8 +56,8 @@ public class RoundManager implements Observer<RoundState>{
         while(roundState == RoundState.PLAYING) {
             actualPlayer = playerSwitcher.getActualPlayer();
 
-            printer.printMsg(String.format(Polish.MSG_PLAYER.toString(), actualPlayer.getStringSign()));
-            printer.printMsg(Polish.MSG_CELL_NUMBER);
+            printer.printMsg(Language.MSG_PLAYER, actualPlayer.getStringSign());
+            printer.printMsg(Language.MSG_CELL_NUMBER);
 
             int move = takeMoveFromUser();
             tryToMakeMove(actualPlayer, move);
@@ -67,7 +68,7 @@ public class RoundManager implements Observer<RoundState>{
         try {
             moveManager.makeMove(Move.build(move, actualPlayer.makeMove()));
         } catch (IllegalArgumentException e) {
-            printer.printMsg(Polish.ERR_CELL_OCCUPIED);
+            printer.printMsg(Language.ERR_CELL_OCCUPIED);
             playerSwitcher.getActualPlayer();
         }
     }
@@ -75,7 +76,7 @@ public class RoundManager implements Observer<RoundState>{
     private int takeMoveFromUser() {
         int move = scanner.getInteger();
         while (move<=0 || move>bd.size()) {
-            printer.printMsg(Polish.ERR_CELL_NUMBER);
+            printer.printMsg(Language.ERR_CELL_NUMBER);
             move = scanner.getInteger();
         }
         return move;

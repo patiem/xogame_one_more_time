@@ -1,6 +1,6 @@
 package gameplay.winning.winTypes;
 
-import utility.Polish;
+import utility.language.Language;
 
 public class Draw implements WinningCondition {
 
@@ -16,6 +16,6 @@ public class Draw implements WinningCondition {
 
     @Override
     public String toString() {
-        return String.format(Polish.MSG_DRAW.toString());
+        return String.format(Language.MSG_DRAW.toString());
     }
 }

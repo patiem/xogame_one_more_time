@@ -1,7 +1,7 @@
 package gameplay.winning.winTypes;
 
 import gameplay.player.Player;
-import utility.Polish;
+import utility.language.Language;
 
 public class OWins implements WinningCondition {
 
@@ -23,6 +23,6 @@ public class OWins implements WinningCondition {
 
     @Override
     public String toString() {
-        return String.format(Polish.MSG_WIN.toString(), player.getName());
+        return String.format(Language.MSG_WIN.toString(), player.getName());
     }
 }
