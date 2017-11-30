@@ -2,6 +2,8 @@ package gameplay.signs;
 
 public class SignFabric {
 
+    private SignFabric(){}
+
     public static Sign getSign(String criteria) {
         switch (criteria) {
             case "X":

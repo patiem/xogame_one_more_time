@@ -33,8 +33,8 @@ public enum Language {
         ERR_BOARD_SIZE,
         ERR_CELL_NUMBER,
         ERR_CELL_OCCUPIED,
+        ERR_PRINTER,
         WIN_X,
-
         WIN_O,
         DRAW
 

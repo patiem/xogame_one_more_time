@@ -1,5 +1,7 @@
 package utility.printing;
 
+import utility.language.Language;
+
 import java.io.IOException;
 import java.util.ResourceBundle;
 
@@ -10,10 +12,7 @@ public class PrintManager {
     private PrintManager(){}
 
     public static void setPrinterBuilderToDefault() {
-        if(printer == null) {
             setPrinter("TR");
-        }
-        else printer.printMsg("Drukarka już została wybrana");
     }
 
     public static void setPrinter(String arg) {
@@ -29,8 +28,8 @@ public class PrintManager {
                 try {
                     printer = FilePrinter.build();
                 } catch (IOException e) {
-                    System.out.print(e.getMessage());
                     printer = new TerminalPrinter();
+                    printer.printMsg(Language.ERR_PRINTER);
                 }
 
                 break;
@@ -45,12 +44,8 @@ public class PrintManager {
     }
 
     public static void close() {
-        try {
-            FilePrinter printer2 = (FilePrinter) printer;
-            printer2.close();
-        } catch (Exception e) {
-
-        }
+        FilePrinter printer2 = (FilePrinter) printer;
+        printer2.close();
     }
 
     public static void setLanguage(ResourceBundle language) {

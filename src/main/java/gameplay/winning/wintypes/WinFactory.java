@@ -5,6 +5,8 @@ import gameplay.round.RoundState;
 
 public class WinFactory {
 
+    private WinFactory(){}
+
     public static WinningCondition getWin(RoundState roundState, Player player) {
         switch (roundState) {
             case XWINS:

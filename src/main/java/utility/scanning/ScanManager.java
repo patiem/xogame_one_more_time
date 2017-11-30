@@ -10,9 +10,7 @@ public class ScanManager {
         return scanner;
     }
 
-    public static void setScanner(String fileName) throws IllegalArgumentException {
+    public static void setScanner(String fileName) {
         scanner = FileScanner.createFileScanner(fileName);
     }
-
-
 }

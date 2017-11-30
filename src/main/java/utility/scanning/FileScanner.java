@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class FileScanner implements Scanning {
 
-    private Scanner scanner;
-    static final Printer printer = PrintManager.getPrinter();
+    private final Scanner scanner;
+    private static final Printer printer = PrintManager.getPrinter();
 
     @Override
     public String userInput() {
@@ -27,6 +27,7 @@ public class FileScanner implements Scanning {
         } catch (FileNotFoundException e) {
             printer.printMsg("Your file with scenario was not found, game will terminated");
             throw new IllegalArgumentException();
+
         }
     }
 
