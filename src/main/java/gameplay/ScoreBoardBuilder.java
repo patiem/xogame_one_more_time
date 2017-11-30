@@ -14,6 +14,7 @@ public class ScoreBoardBuilder {
     public ScoreBoardBuilder withPlayersFromConfig(Config<String> users) {
         PlayerSwitcher pl = PlayerSwitcher.build(users);
         Player playerOne = pl.getActualPlayer();
+        pl.switchPlayers();
         Player playerTwo = pl.getActualPlayer();
         playerX = (playerOne.getSign() instanceof XSign) ? playerOne : playerTwo;
         playerO = (playerOne.getSign() instanceof OSign) ? playerOne : playerTwo;

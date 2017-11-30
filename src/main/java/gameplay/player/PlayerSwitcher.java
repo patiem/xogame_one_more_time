@@ -28,8 +28,10 @@ public class PlayerSwitcher {
     }
 
     public Player getActualPlayer() {
-        Player player = players.get(0);
+        return players.get(0);
+    }
+
+    public void switchPlayers() {
         Collections.reverse(players);
-        return player;
     }
 }

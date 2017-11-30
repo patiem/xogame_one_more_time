@@ -19,7 +19,9 @@ public class PlayerSwitcherTest {
 
         //when - then
         assertEquals(playerSwitcher.getActualPlayer().getSign().getClass(), XSign.class);
+        playerSwitcher.switchPlayers();
         assertEquals(playerSwitcher.getActualPlayer().getSign().getClass(), OSign.class);
+        playerSwitcher.switchPlayers();
         assertEquals(playerSwitcher.getActualPlayer().getSign().getClass(), XSign.class);
     }
 

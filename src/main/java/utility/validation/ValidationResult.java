@@ -12,12 +12,12 @@ public class ValidationResult {
         return new ValidationResult(false, message);
     }
 
-    private ValidationResult(boolean valid, String messsage) {
+    private ValidationResult(boolean valid, String message) {
         this.valid = valid;
-        this.message = messsage;
+        this.message = message;
     }
 
-    public boolean isvalid() {
+    public boolean isValid() {
         return valid;
     }
 

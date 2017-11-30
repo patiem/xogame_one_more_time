@@ -43,4 +43,4 @@ public class NumberTestingMethodsTest {
 
 }
 
-    //todo: move numer check from string to PersonTestingMethods?
+    //todo: move numer check create string to PersonTestingMethods?

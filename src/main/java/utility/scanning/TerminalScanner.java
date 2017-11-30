@@ -2,7 +2,7 @@ package utility.scanning;
 
 import java.util.Scanner;
 
-public class TScanner implements Scanning {
+public class TerminalScanner implements Scanning {
 
     private final Scanner scanner = new Scanner(System.in);
 

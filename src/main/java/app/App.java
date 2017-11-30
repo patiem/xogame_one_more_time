@@ -24,7 +24,7 @@ public class App {
         try {
             setupUtilities(args);
             setupGame().run();
-            PrintManager.close();
+            if (PrintManager.isPrintingToFile()) PrintManager.close();
 
         } catch (IllegalArgumentException e) {
             LOGGER.log(Level.FINE, e.getMessage());

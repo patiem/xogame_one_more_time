@@ -12,7 +12,7 @@ public class ValidationResultTest {
         //given
         ValidationResult vr = ValidationResult.ok();
         //when //then
-        assertTrue(vr.isvalid());
+        assertTrue(vr.isValid());
     }
 
     @Test
@@ -22,7 +22,7 @@ public class ValidationResultTest {
         String err = "Wrong";
         ValidationResult vr = ValidationResult.fail(err);
         //when //then
-        assertFalse(vr.isvalid());
+        assertFalse(vr.isValid());
     }
 
     @Test

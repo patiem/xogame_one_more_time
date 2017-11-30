@@ -7,7 +7,7 @@ public class IOValidation<K> implements Validation<K> {
     private final Predicate<K> predicate;
     private final String onErrorMessage;
 
-    public static <K> IOValidation<K> from(Predicate<K> predicate, String onErrorMessage) {
+    public static <K> IOValidation<K> create(Predicate<K> predicate, String onErrorMessage) {
         return new IOValidation<>(predicate, onErrorMessage);
     }
 

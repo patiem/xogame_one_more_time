@@ -66,14 +66,15 @@ public class RoundManager implements Observer<RoundState>{
     private void tryToMakeMove(Player actualPlayer, int move) {
         try {
             moveManager.makeMove(Move.build(move, actualPlayer.makeMove()));
+            playerSwitcher.switchPlayers();
         } catch (IllegalArgumentException e) {
             printer.printMsg(Language.ERR_CELL_OCCUPIED);
-            playerSwitcher.getActualPlayer();
         }
     }
 
     private int takeMoveFromUser() {
         int move = scanner.getInteger();
+
         while (move<=0 || move>bd.size()) {
             printer.printMsg(Language.ERR_CELL_NUMBER);
             move = scanner.getInteger();

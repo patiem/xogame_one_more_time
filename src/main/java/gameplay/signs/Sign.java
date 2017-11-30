@@ -1,5 +1,3 @@
 package gameplay.signs;
 
-public interface Sign {
-
-}
+public interface Sign {}

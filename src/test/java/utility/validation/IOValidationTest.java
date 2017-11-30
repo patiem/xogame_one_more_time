@@ -7,25 +7,25 @@ import static org.testng.Assert.*;
 public class IOValidationTest {
 
     @Test
-    public void ifValuePassedToTestIsCorect_returnValidResultTest() {
+    public void ifValuePassedToTestIsCorrectReturnValidResultTest() {
 
         //given
-        IOValidation<String> sv = IOValidation.from(s -> s.equals(s), "Wrong");
+        IOValidation<String> sv = IOValidation.create(s -> s.equals(s), "Wrong");
         String s = "Anything";
 
         //when //then
-        assertTrue(sv.test(s).isvalid());
+        assertTrue(sv.test(s).isValid());
     }
 
     @Test
-    public void ifValuePassedToTestIsInccorect_returnInvalidResultTest() {
+    public void ifValuePassedToTestIsIncorrectReturnInvalidResultTest() {
 
         //given
-        IOValidation<String> sv = IOValidation.from(s -> s.equals("No"), "Wrong");
+        IOValidation<String> sv = IOValidation.create(s -> s.equals("No"), "Wrong");
         String s = "Anything";
 
         //when //then
-        assertFalse(sv.test(s).isvalid());
+        assertFalse(sv.test(s).isValid());
     }
 
 }

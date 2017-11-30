@@ -51,4 +51,8 @@ public class PrintManager {
     public static void setLanguage(ResourceBundle language) {
         printer.setLanguage(language);
     }
+
+    public static boolean isPrintingToFile() {
+        return printer instanceof FilePrinter;
+    }
 }

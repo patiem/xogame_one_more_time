@@ -64,8 +64,8 @@ public class Starter {
         printer.printMsg(msg);
         String valueTotest = scanner.userInput();
 
-        test = IOValidation.from(NumberTestingMethods::isNumberValid, err.toString()).test(valueTotest);
-        if (!test.isvalid()) {
+        test = IOValidation.create(NumberTestingMethods::isNumberValid, err.toString()).test(valueTotest);
+        if (!test.isValid()) {
             printer.printMsg(err);
             return defaultValue;
         }
@@ -80,9 +80,9 @@ public class Starter {
          sign = scanner.userInput().toUpperCase();
 
          test = IOValidation
-                 .from(PlayerTestingMethods::isValidSign, err.toString())
+                 .create(PlayerTestingMethods::isValidSign, err.toString())
                  .test(sign);
-            if (!test.isvalid()) {
+            if (!test.isValid()) {
                 printer.printMsg(err);
                 return "X";
             }
@@ -97,10 +97,10 @@ public class Starter {
             printer.printMsg(msg);
             name = scanner.userInput();
             test = IOValidation
-                    .from(PlayerTestingMethods::isValidName, err.toString())
+                    .create(PlayerTestingMethods::isValidName, err.toString())
                     .test(name);
-            if (!test.isvalid()) printer.printMsg(err);
-        } while (!test.isvalid());
+            if (!test.isValid()) printer.printMsg(err);
+        } while (!test.isValid());
 
         return name;
     }
