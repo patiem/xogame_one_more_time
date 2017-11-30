@@ -73,12 +73,13 @@ public class RoundManager implements Observer<RoundState>{
     }
 
     private int takeMoveFromUser() {
-        int move = scanner.getInteger();
-
+        Integer move = scanner.getInteger();
+        printer.printMsg(Language.MSG_MOVE, move.toString());
         while (move<=0 || move>bd.size()) {
             printer.printMsg(Language.ERR_CELL_NUMBER);
             move = scanner.getInteger();
         }
+
         return move;
     }
 

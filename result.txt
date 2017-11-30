@@ -34,6 +34,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 1
+Your choice is 1
  ____ ____ ____ 
 |    |    |    |
 |  X |  2 |  3 |
@@ -49,6 +50,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 2
+Your choice is 2
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  3 |
@@ -64,6 +66,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 3
+Your choice is 3
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  X |
@@ -79,6 +82,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 4
+Your choice is 4
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  X |
@@ -94,6 +98,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 5
+Your choice is 5
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  X |
@@ -109,6 +114,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 6
+Your choice is 6
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  X |
@@ -124,6 +130,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 7
+Your choice is 7
  ____ ____ ____ 
 |    |    |    |
 |  X |  O |  X |
@@ -154,6 +161,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 5
+Your choice is 5
  ____ ____ ____ 
 |    |    |    |
 |  1 |  2 |  3 |
@@ -169,6 +177,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 2
+Your choice is 2
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  3 |
@@ -184,6 +193,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 4
+Your choice is 4
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  3 |
@@ -199,6 +209,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 6
+Your choice is 6
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  3 |
@@ -214,6 +225,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 3
+Your choice is 3
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  O |
@@ -229,6 +241,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 7
+Your choice is 7
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  O |
@@ -244,6 +257,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 8
+Your choice is 8
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  O |
@@ -259,6 +273,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 9
+Your choice is 9
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  O |
@@ -274,6 +289,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 1
+Your choice is 1
  ____ ____ ____ 
 |    |    |    |
 |  O |  X |  O |
@@ -304,6 +320,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 2
+Your choice is 2
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  3 |
@@ -319,6 +336,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 5
+Your choice is 5
  ____ ____ ____ 
 |    |    |    |
 |  1 |  X |  3 |
@@ -334,6 +352,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 1
+Your choice is 1
  ____ ____ ____ 
 |    |    |    |
 |  X |  X |  3 |
@@ -349,6 +368,7 @@ Player O
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 4
+Your choice is 4
  ____ ____ ____ 
 |    |    |    |
 |  X |  X |  3 |
@@ -364,6 +384,7 @@ Player X
 Please specify number of field where you want to place your sign
 Or any letter to exit game
 3
+Your choice is 3
  ____ ____ ____ 
 |    |    |    |
 |  X |  X |  X |

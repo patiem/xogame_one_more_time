@@ -5,7 +5,7 @@ public interface Scanning {
 
     default int getInteger() {
         String value = userInput();
-        value.replaceAll("\\s+","");
+        value = value.replaceAll("\\s","");
         return Integer.valueOf(value);
     }
 }

@@ -36,6 +36,6 @@ public enum Language {
         ERR_PRINTER,
         WIN_X,
         WIN_O,
-        DRAW
+        MSG_MOVE, DRAW
 
 }
