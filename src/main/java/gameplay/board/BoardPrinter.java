@@ -15,8 +15,8 @@ public class BoardPrinter implements Observer<MoveList> {
     private String inline;
     private String pipes;
     private String line;
-    private BoardDimension bd;
-    private Printer printer;
+    private final BoardDimension bd;
+    private final Printer printer;
     private StringBuilder sb;
 
 

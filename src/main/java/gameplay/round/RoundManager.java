@@ -7,7 +7,6 @@ import gameplay.move.MoveManager;
 import gameplay.move.Observer;
 import gameplay.player.Player;
 import gameplay.player.PlayerSwitcher;
-import gameplay.winning.wintypes.RoundState;
 import gameplay.winning.wintypes.WinFactory;
 import gameplay.winning.wintypes.WinningCondition;
 import utility.language.Language;
@@ -16,11 +15,11 @@ import utility.scanning.Scanning;
 
 public class RoundManager implements Observer<RoundState>{
 
-    private BoardDimension bd;
-    private PlayerSwitcher playerSwitcher;
-    private MoveManager moveManager;
+    private final BoardDimension bd;
+    private final PlayerSwitcher playerSwitcher;
+    private final MoveManager moveManager;
 
-    private BoardPrinter boardPrinter;
+    private final BoardPrinter boardPrinter;
     private RoundState roundState;
     private Printer printer;
     private Scanning scanner;

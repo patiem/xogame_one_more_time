@@ -1,17 +1,15 @@
 package utility.printing;
 
-import utility.language.Language;
-
+ import utility.language.Language;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class FilePrinter implements Printer {
 
-    private PrintWriter writer;
+    private final PrintWriter writer;
     private ResourceBundle subtitles;
 
     static FilePrinter build() throws IOException {
@@ -20,7 +18,7 @@ public class FilePrinter implements Printer {
         return new FilePrinter(new PrintWriter(new FileWriter(result)));
     }
 
-    FilePrinter(PrintWriter printer)  {
+    private FilePrinter(PrintWriter printer)  {
         writer = printer;
     }
 

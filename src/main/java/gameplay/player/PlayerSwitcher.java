@@ -9,7 +9,7 @@ import java.util.List;
 
 public class PlayerSwitcher {
 
-    private List<Player> players;
+    private final List<Player> players;
 
     public static PlayerSwitcher build(Config<String> users) {
 

@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class BoardTest {
 
-    Board board;
+    private Board board;
 
     @DataProvider(name = "boardDimension")
     public static Object[][] boardSize() {
@@ -28,7 +28,7 @@ public class BoardTest {
 
 
         //when - then
-        String signDoesNotMatterHere = null;
+        String signDoesNotMatterHere = "X";
         assertTrue(board.update(move, signDoesNotMatterHere));
     }
 
@@ -85,8 +85,4 @@ public class BoardTest {
         //then
         assertTrue(board.getCell(move).equals("X"));
     }
-
 }
-
-//TODO: dont allow to create board dimension when hvw < 3
-//TODO: dont allow to create board dimension when w < min(hv)

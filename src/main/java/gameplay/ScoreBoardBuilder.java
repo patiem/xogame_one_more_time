@@ -8,10 +8,10 @@ import init.Config;
 
 public class ScoreBoardBuilder {
 
-    Player playerX;
-    Player playerO;
+    private Player playerX;
+    private Player playerO;
 
-    public ScoreBoardBuilder withPlayersFromConfig(Config users) {
+    public ScoreBoardBuilder withPlayersFromConfig(Config<String> users) {
         PlayerSwitcher pl = PlayerSwitcher.build(users);
         Player playerOne = pl.getActualPlayer();
         Player playerTwo = pl.getActualPlayer();

@@ -5,7 +5,7 @@ import gameplay.signs.Sign;
 public class Move {
 
     private final Sign sign;
-    private int position;
+    private final int position;
 
     public static Move build(int move, Sign actualSign) {
         return new Move(move, actualSign);

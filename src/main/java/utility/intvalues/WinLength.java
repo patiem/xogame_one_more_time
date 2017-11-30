@@ -1,8 +1,8 @@
-package utility.intValues;
+package utility.intvalues;
 
 public class WinLength implements IntValue {
 
-    private int value;
+    private final int value;
 
     public WinLength(int value) {
         this.value = value;

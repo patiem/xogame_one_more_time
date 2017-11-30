@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class MoveManagerTest {
 
-    MoveManager ml;
+    private MoveManager ml;
 
     class SomeObserver implements Observer<Integer> {
         @Override

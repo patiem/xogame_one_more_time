@@ -1,10 +1,10 @@
 package gameplay.board;
 
 import init.Config;
-import utility.intValues.Horizontal;
-import utility.intValues.IntValue;
-import utility.intValues.Size;
-import utility.intValues.WinLength;
+import utility.intvalues.Horizontal;
+import utility.intvalues.IntValue;
+import utility.intvalues.Size;
+import utility.intvalues.WinLength;
 
 import java.util.Map;
 
@@ -15,7 +15,7 @@ public class BoardDimension {
     private final IntValue winningLength;
 
 
-    public static BoardDimension build(Config board) {
+    public static BoardDimension build(Config<Integer> board) {
         Map<String, Integer> configs = board.getConfig();
         IntValue w = new Horizontal(configs.get("horizontal"));
         IntValue s = new Size(configs.get("vertical") * w.intValue());

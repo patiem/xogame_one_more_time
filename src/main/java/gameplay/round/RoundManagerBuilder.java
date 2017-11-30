@@ -7,18 +7,18 @@ import gameplay.player.PlayerSwitcher;
 import gameplay.winning.RoundArbiter;
 import init.Config;
 import utility.printing.PrintManager;
-import utility.scanning.ScannMenager;
+import utility.scanning.ScanManager;
 
 public class RoundManagerBuilder {
 
-    BoardDimension bd;
-    PlayerSwitcher playerSwitcher;
-    MoveManager moveManager;
-    RoundArbiter roundArbiter;
-    BoardPrinter boardPrinter;
+    private final BoardDimension bd;
+    private PlayerSwitcher playerSwitcher;
+    private MoveManager moveManager;
+    private RoundArbiter roundArbiter;
+    private BoardPrinter boardPrinter;
 
 
-    public RoundManagerBuilder withPlayers(Config config) {
+    public RoundManagerBuilder withPlayers(Config<String> config) {
         playerSwitcher = PlayerSwitcher.build(config);
         return this;
     }
@@ -50,7 +50,7 @@ public class RoundManagerBuilder {
         RoundManager rm = new RoundManager(bd, playerSwitcher, moveManager, boardPrinter);
         roundArbiter.register(rm);
         rm.setPrinter(PrintManager.getPrinter());
-        rm.setScanner(ScannMenager.getScanner());
+        rm.setScanner(ScanManager.getScanner());
         return rm;
     }
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class MoveManager implements Subject{
 
-    List<Observer> observers;
-    MoveList moves;
+    final List<Observer> observers;
+    private MoveList moves;
 
     public MoveManager() {
         observers = new ArrayList<>();

@@ -1,12 +1,9 @@
-package gameplay.winning.wintypes;
+package gameplay.round;
 
 public enum RoundState {
 
     PLAYING,
-    WIN,
     XWINS,
     OWINS,
-    DRAW,
-    EXIT
-
+    DRAW
 }

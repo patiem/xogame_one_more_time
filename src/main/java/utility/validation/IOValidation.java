@@ -4,11 +4,11 @@ import java.util.function.Predicate;
 
 public class IOValidation<K> implements Validation<K> {
 
-    private Predicate<K> predicate;
-    private String onErrorMessage;
+    private final Predicate<K> predicate;
+    private final String onErrorMessage;
 
     public static <K> IOValidation<K> from(Predicate<K> predicate, String onErrorMessage) {
-        return new IOValidation<K>(predicate, onErrorMessage);
+        return new IOValidation<>(predicate, onErrorMessage);
     }
 
     private IOValidation(Predicate<K> predicate, String onErrorMessage) {

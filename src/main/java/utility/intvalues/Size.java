@@ -1,8 +1,8 @@
-package utility.intValues;
+package utility.intvalues;
 
 public class Size implements IntValue {
 
-    private int value;
+    private final int value;
 
     public Size(int value) {
         this.value = value;

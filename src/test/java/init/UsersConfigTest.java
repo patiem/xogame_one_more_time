@@ -1,7 +1,5 @@
 package init;
 
-import init.Config;
-import init.UsersConfig;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -20,8 +18,6 @@ public class UsersConfigTest {
         //when - then
         assertTrue(config.getConfig() instanceof Map);
     }
-
-
 
     @Test
     public void configHasMapWithFourFieldsWithKeys() {

@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class UsersConfig implements Config<String> {
 
-    private String player1name;
-    private String player2name;
-    private String player1Sign;
-    private String player2Sign;
-    private String start;
+    private final String player1name;
+    private final String player2name;
+    private final String player1Sign;
+    private final String player2Sign;
+    private final String start;
 
     UsersConfig(String name, String name2, String sign1, String sign2, String start) {
 

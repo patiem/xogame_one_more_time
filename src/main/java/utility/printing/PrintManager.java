@@ -1,13 +1,13 @@
 package utility.printing;
 
-import utility.language.Language;
-
 import java.io.IOException;
 import java.util.ResourceBundle;
 
 public class PrintManager {
 
-    static Printer printer = new TerminalPrinter();
+    private static Printer printer = new TerminalPrinter();
+
+    private PrintManager(){}
 
     public static void setPrinterBuilderToDefault() {
         if(printer == null) {
@@ -21,11 +21,9 @@ public class PrintManager {
         switch (arg.toUpperCase()) {
             case "TR":
                 printer = new TerminalPrinter();
-                //printer.printMsg(Language.MSG_PRINT_TR);
                 break;
             case "ER":
                 printer = new ErrorPrinter();
-                //printer.printMsg(Language.MSG_PRINT_ER);
                 break;
             case "FL":
                 try {
@@ -33,9 +31,7 @@ public class PrintManager {
                 } catch (IOException e) {
                     System.out.print(e.getMessage());
                     printer = new TerminalPrinter();
-                    //printer.printMsg(Language.ERR_PRINT.toString() + Language.MSG_PRINT_TR.toString() );
                 }
-                //printer.printMsg(Language.MSG_PRINT_FL);
 
                 break;
             default:

@@ -4,9 +4,6 @@ public enum Language {
 
         EMPTY,
         MSG_START,
-        MSG_PRINT_TR,
-        MSG_PRINT_ER,
-        MSG_PRINT_FL,
 
         MSG_NAME_ONE,
         MSG_NAME_TWO,
@@ -36,7 +33,6 @@ public enum Language {
         ERR_BOARD_SIZE,
         ERR_CELL_NUMBER,
         ERR_CELL_OCCUPIED,
-        ERR_PRINT,
         WIN_X,
 
         WIN_O,

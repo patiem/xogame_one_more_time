@@ -8,9 +8,9 @@ import utility.printing.Printer;
 public class Game {
 
     private final Printer printer;
-    private int roundNumber;
-    private RoundManager roundMenager;
-    private ScoreBoard scoreBoard;
+    private final int roundNumber;
+    private final RoundManager roundMenager;
+    private final ScoreBoard scoreBoard;
 
 
     public Game(int defaultRoundNumber, RoundManager roundMenager, ScoreBoard scoreBoard) {

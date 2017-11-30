@@ -2,7 +2,9 @@ package utility.validation.testingmethods;
 
 public class NumberTestingMethods {
 
-    public static boolean isNumber(String s) {
+    private NumberTestingMethods(){}
+
+    private static boolean isNumber(String s) {
         try {
             Integer.valueOf(s);
             return true;
@@ -11,7 +13,7 @@ public class NumberTestingMethods {
         }
     }
 
-    public static boolean isBetween(int value, int min, int max) {
+    private static boolean isBetween(int value, int min, int max) {
         return value >= min && value <= max;
     }
 

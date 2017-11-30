@@ -5,7 +5,7 @@ import gameplay.move.MoveList;
 import gameplay.move.Observer;
 import gameplay.move.Subject;
 import gameplay.signs.XSign;
-import gameplay.winning.wintypes.RoundState;
+import gameplay.round.RoundState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class RoundArbiter implements Observer<MoveList>, Subject{
     private final WinSeeker winSeeker;
     private final Sequencer sequencer;
     private final int maxCountOfMoves;
-    private List<Observer> observers;
+    private final List<Observer> observers;
     private RoundState roundState;
 
     public RoundArbiter(BoardDimension bd) {

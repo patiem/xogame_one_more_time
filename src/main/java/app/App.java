@@ -9,7 +9,7 @@ import init.Config;
 import init.Starter;
 import utility.language.LanguageLoader;
 import utility.printing.PrintManager;
-import utility.scanning.ScannMenager;
+import utility.scanning.ScanManager;
 
 import java.util.Map;
 import java.util.logging.Level;
@@ -32,8 +32,8 @@ public class App {
     }
 
     private static Game setupGame() {
-        Starter starter = new Starter(PrintManager.getPrinter(), ScannMenager.getScanner());
-        Map<String, Config> config = starter.run();
+        Starter starter = new Starter(PrintManager.getPrinter(), ScanManager.getScanner());
+        Map<String, Config<String>> config = starter.run();
 
         int defaultRoundNumber = 3;
 
@@ -62,7 +62,7 @@ public class App {
         else if (args.length == 3) {
             PrintManager.setPrinter(args[0]);
             PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
-            ScannMenager.setScanner(args[2]);
+            ScanManager.setScanner(args[2]);
         } else {
             throw new IllegalArgumentException("Read Readme before running this app");
         }

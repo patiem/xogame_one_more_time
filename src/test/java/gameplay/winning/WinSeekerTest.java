@@ -3,18 +3,18 @@ package gameplay.winning;
 import gameplay.board.BoardDimension;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utility.intValues.Horizontal;
-import utility.intValues.IntValue;
-import utility.intValues.Size;
-import utility.intValues.WinLength;
+import utility.intvalues.Horizontal;
+import utility.intvalues.IntValue;
+import utility.intvalues.Size;
+import utility.intvalues.WinLength;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class WinSeekerTest {
 
-    WinSeeker winSeeker;
-    BoardDimension bd;
+    private WinSeeker winSeeker;
+    private BoardDimension bd;
 
     @BeforeMethod
     public void setup() {

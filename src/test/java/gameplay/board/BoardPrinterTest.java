@@ -2,17 +2,16 @@ package gameplay.board;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utility.intValues.Horizontal;
-import utility.intValues.IntValue;
-import utility.intValues.Size;
-import utility.intValues.WinLength;
+import utility.intvalues.Horizontal;
+import utility.intvalues.IntValue;
+import utility.intvalues.Size;
+import utility.intvalues.WinLength;
 
 import static org.testng.Assert.assertEquals;
 
 public class BoardPrinterTest {
 
 
-    private BoardDimension boardDimension;
     private Board board;
     private BoardPrinter boardPrinter;
 
@@ -21,7 +20,7 @@ public class BoardPrinterTest {
         IntValue value = new Horizontal(3);
         IntValue size = new Size(3 * 3);
         IntValue win = new WinLength(3);
-        boardDimension = new BoardDimension(value, size, win);;
+        BoardDimension boardDimension = new BoardDimension(value, size, win);
         board = new BoardBuilder(boardDimension).viaArrayList().fillUpArraysListWithNumbers().build();
         boardPrinter = new BoardPrinter(boardDimension);
         boardPrinter.setup();

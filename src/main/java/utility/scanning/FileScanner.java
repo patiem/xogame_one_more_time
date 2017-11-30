@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class FileScanner implements Scanning {
 
     private Scanner scanner;
-    private Printer printer = PrintManager.getPrinter();
+    private final Printer printer = PrintManager.getPrinter();
 
     @Override
     public String userInput() {

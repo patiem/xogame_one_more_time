@@ -1,7 +1,9 @@
 package utility.scanning;
 
 
-public class ScannMenager {
+public class ScanManager {
+
+    private ScanManager(){}
 
     private static Scanning scanner = new TScanner();
 

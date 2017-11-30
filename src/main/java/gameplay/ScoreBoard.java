@@ -6,12 +6,13 @@ import utility.language.Language;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ScoreBoard {
 
-    private List<WinningCondition> winList = new ArrayList<>();
-    private Player playerX;
-    private Player playerO;
+    private final List<WinningCondition> winList = new ArrayList<>();
+    private final Player playerX;
+    private final Player playerO;
 
     public ScoreBoard(Player playerX, Player playerO) {
         this.playerX = playerX;
@@ -34,7 +35,7 @@ public class ScoreBoard {
     }
 
     public Language getWinner() {
-        if (playerX.getPoints() == playerO.getPoints()) return Language.DRAW;
+        if (Objects.equals(playerX.getPoints(), playerO.getPoints())) return Language.DRAW;
         return (playerX.getPoints() > playerO.getPoints()) ? Language.WIN_X : Language.WIN_O;
     }
 }

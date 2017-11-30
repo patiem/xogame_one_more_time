@@ -1,8 +1,8 @@
 package utility.validation;
 
 public class ValidationResult {
-    private boolean valid;
-    private String message;
+    private final boolean valid;
+    private final String message;
 
     public static ValidationResult ok(){
         return new ValidationResult(true, null);

@@ -11,11 +11,12 @@ import utility.validation.testingmethods.PlayerTestingMethods;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unchecked")
 public class Starter {
 
-    private Scanning scanner;
-    private Printer printer;
-    private Map<String, Config> configurations;
+    private final Scanning scanner;
+    private final Printer printer;
+    private final Map<String, Config<String>> configurations;
 
     public Starter(Printer printer, Scanning scanner) {
         this.scanner = scanner;
@@ -23,7 +24,8 @@ public class Starter {
         configurations = new HashMap<>();
     }
 
-    public Map<String, Config> run() {
+    @SuppressWarnings("unchecked")
+    public Map<String, Config<String>> run() {
         welcome();
         configurations.put("users", takeUserData());
         configurations.put("board", takeBoardData());

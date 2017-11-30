@@ -11,17 +11,15 @@ import java.util.stream.IntStream;
 public class BoardBuilder {
 
 
-    private final BoardDimension boardDimension;
-    private int initialCapacity;
+    private final int initialCapacity;
     private List<String> al;
 
     public BoardBuilder(BoardDimension bd) {
-        this.boardDimension = bd;
-        initialCapacity = boardDimension.size();
+        initialCapacity = bd.size();
     }
 
     public BoardBuilder viaArrayList() {
-        al = new ArrayList(initialCapacity);
+        al = new ArrayList<>(initialCapacity);
         return this;
     }
 

@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class BoardConfig implements Config<Integer> {
 
-    private int horizontal;
-    private int vertical;
-    private int winningLenght;
+    private final int horizontal;
+    private final int vertical;
+    private final int winningLenght;
 
     public BoardConfig(int horizontal, int vertical, int winningLenght) {
         this.horizontal = horizontal;

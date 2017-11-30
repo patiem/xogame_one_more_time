@@ -5,11 +5,11 @@ import gameplay.board.BoardBuilder;
 import gameplay.board.BoardDimension;
 import gameplay.move.MoveList;
 
-public class Sequencer {
+class Sequencer {
 
     private final int jump;
-    private BoardDimension bd;
-    private int winLength;
+    private final BoardDimension bd;
+    private final int winLength;
     private StringBuilder builder;
     private Board board;
 

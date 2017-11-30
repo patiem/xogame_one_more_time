@@ -1,6 +1,6 @@
 package gameplay.move;
 
-public class MoveListTest {
+class MoveListTest {
 
 //TODO: testy!!
 }

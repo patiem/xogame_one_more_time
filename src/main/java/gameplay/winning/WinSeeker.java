@@ -2,16 +2,14 @@ package gameplay.winning;
 
 import gameplay.board.BoardDimension;
 
-public class WinSeeker {
+class WinSeeker {
 
 
-    private final int winningLength;
     private final String pattern;
 
 
     public WinSeeker(BoardDimension bd) {
-        this.winningLength = bd.winningLength();
-        this.pattern = String.format(".*(X{%d}|O{%d}).*", winningLength, winningLength);
+        this.pattern = String.format(".*(X{%d}|O{%d}).*", bd.winningLength(), bd.winningLength());
 
     }
 

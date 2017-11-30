@@ -4,21 +4,21 @@ import utility.language.Language;
 
 public class Draw implements WinningCondition {
 
-    static final int xScore = 1;
-    static final int oScore = 1;
+    private static final int X_SCORE = 1;
+    private static final int O_SCORE = 1;
 
     @Override
     public int getPointsForX() {
-        return xScore;
+        return X_SCORE;
     }
 
     @Override
     public int getPointsForO() {
-        return oScore;
+        return O_SCORE;
     }
 
     @Override
     public String toString() {
-        return String.format(Language.MSG_DRAW.toString());
+        return Language.MSG_DRAW.toString();
     }
 }

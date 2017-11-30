@@ -5,9 +5,9 @@ import utility.language.Language;
 
 public class OWins implements WinningCondition {
 
-    private Player player;
-    static final int xScore = 0;
-    static final int oScore = 3;
+    private final Player player;
+    private static final int X_SCORE = 0;
+    private static final int O_SCORE = 3;
 
     public OWins(Player player) {
         this.player = player;
@@ -15,12 +15,12 @@ public class OWins implements WinningCondition {
 
     @Override
     public int getPointsForX() {
-        return xScore;
+        return X_SCORE;
     }
 
     @Override
     public int getPointsForO() {
-        return oScore;
+        return O_SCORE;
     }
 
     @Override

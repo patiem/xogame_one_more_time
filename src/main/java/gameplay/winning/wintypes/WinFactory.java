@@ -1,7 +1,7 @@
 package gameplay.winning.wintypes;
 
 import gameplay.player.Player;
-import gameplay.signs.Sign;
+import gameplay.round.RoundState;
 
 public class WinFactory {
 
@@ -16,10 +16,5 @@ public class WinFactory {
             default:
                 return null;
         }
-    }
-
-    public static WinningCondition getWin(Sign lastMoveSign, Player player) {
-        if (lastMoveSign instanceof XWins) return getWin(RoundState.XWINS, player);
-        return getWin(RoundState.OWINS, player);
     }
 }

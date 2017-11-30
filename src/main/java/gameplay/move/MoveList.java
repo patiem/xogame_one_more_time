@@ -7,9 +7,9 @@ import java.util.List;
 
 public class MoveList {
 
-    List<Move> movesHistory;
-    Move lastMove;
-    Integer moveCount;
+    private final List<Move> movesHistory;
+    private Move lastMove;
+    private Integer moveCount;
 
     public MoveList() {
         movesHistory = new ArrayList<>();
