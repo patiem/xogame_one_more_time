@@ -1,6 +1,5 @@
 package utility.scanning;
 
-
 public class ScanManager {
 
     private ScanManager(){}
@@ -11,8 +10,8 @@ public class ScanManager {
         return scanner;
     }
 
-    public static void setScanner(String fileName) {
-        scanner = new FileScanner(fileName);
+    public static void setScanner(String fileName) throws IllegalArgumentException {
+        scanner = FileScanner.createFileScanner(fileName);
     }
 
 

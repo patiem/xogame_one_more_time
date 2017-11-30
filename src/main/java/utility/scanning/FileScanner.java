@@ -10,23 +10,29 @@ import java.util.Scanner;
 public class FileScanner implements Scanning {
 
     private Scanner scanner;
-    private final Printer printer = PrintManager.getPrinter();
+    static final Printer printer = PrintManager.getPrinter();
 
     @Override
     public String userInput() {
         String input = scanner.nextLine();
         printer.printMsg(input);
-
         return input;
     }
 
-    public FileScanner(String fileName) {
-
+    public static FileScanner createFileScanner(String fileName) {
         try {
-            scanner = new Scanner(new FileReader(fileName));
+            Scanner scanner = new Scanner(new FileReader(fileName));
+            return new FileScanner(scanner);
+
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            printer.printMsg("Your file with scenario was not found, game will terminated");
+            throw new IllegalArgumentException();
         }
+    }
+
+    private FileScanner(Scanner scanner) {
+        this.scanner = scanner;
+
     }
 
 
