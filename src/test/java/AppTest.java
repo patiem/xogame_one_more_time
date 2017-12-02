@@ -13,7 +13,7 @@ public class AppTest {
     public void wholeGameTest() throws IOException {
 
         //given
-        String file = "game1.txt";
+        String file = "src/test/scenerios/game1.txt";
         String print = "FL";
         String language = "EN";
         String[] args = {print, language, file};
