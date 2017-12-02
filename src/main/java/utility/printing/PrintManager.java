@@ -55,4 +55,13 @@ public class PrintManager {
     public static boolean isPrintingToFile() {
         return printer instanceof FilePrinter;
     }
+
+    public static void buildWithResultFile(String fileName) {
+        try {
+            printer = FilePrinter.build(fileName);
+        } catch (IOException e) {
+            printer = new TerminalPrinter();
+            printer.printMsg(Language.ERR_PRINTER);
+        }
+    }
 }

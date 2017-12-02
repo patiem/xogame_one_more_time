@@ -11,4 +11,5 @@ public interface Printer {
     void setLanguage(ResourceBundle subtitles);
 
     void printMsg(Language msgPlayerComplete, String... blanks);
+
 }

@@ -11,9 +11,19 @@ public class FilePrinter implements Printer {
 
     private final PrintWriter writer;
     private ResourceBundle subtitles;
+    private String resultFileName;
+
 
     static FilePrinter build() throws IOException {
         File result = new File("result.txt");
+        result.createNewFile();
+        return new FilePrinter(new PrintWriter(new FileWriter(result)));
+    }
+
+
+
+    static FilePrinter build(String fileName) throws IOException {
+        File result = new File(fileName);
         result.createNewFile();
         return new FilePrinter(new PrintWriter(new FileWriter(result)));
     }

@@ -59,8 +59,9 @@ public class App {
             PrintManager.setPrinter(args[0]);
             PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
         }
-        else if (args.length == 3) {
-            PrintManager.setPrinter(args[0]);
+        else if (args.length >= 3) {
+            if (args[0].equals("FL") && args.length > 3) PrintManager.buildWithResultFile(args[3]);
+            else PrintManager.setPrinter(args[0]);
             PrintManager.setLanguage(LanguageLoader.loadLanguage(args[1]));
             ScanManager.setScanner(args[2]);
         } else {
