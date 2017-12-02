@@ -3,6 +3,7 @@ package app;
 import org.apache.commons.io.input.ReversedLinesFileReader;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -12,6 +13,12 @@ import java.io.IOException;
 import static org.testng.Assert.*;
 
 public class AppTest extends DataProviderForApp {
+
+    @BeforeSuite
+    public void printBeforMessage() {
+        System.out.println("Tests will take a while because there will be almost 1800 scenarios generated" +
+                " and tested end to end. Please be patient");
+    }
 
 
     @Test
@@ -54,5 +61,7 @@ public class AppTest extends DataProviderForApp {
                 "Results are stored in <working_directory>/src/test/results .\n" +
                 "Generated scenarios are stored in <working_directory>/src/test/results");
     }
+
+
 
 }
