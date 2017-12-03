@@ -4,7 +4,6 @@
 java -jar target/xogame-1.0.1.jar
 
 ### Z parametrami - nalezy podać obydwa w kolejności: druk<spacja>język
-
 java -jar target/xogame-1.0.1.jar TR EN
 
 ##### -Z parameterem TR - drukowanie do terminala
