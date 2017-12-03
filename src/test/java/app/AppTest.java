@@ -2,7 +2,6 @@ package app;
 
 import org.apache.commons.io.input.ReversedLinesFileReader;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -28,30 +27,31 @@ public class AppTest extends DataProviderForApp {
         String file = "src/test/scenarios/game1.txt";
         String print = "FL";
         String language = "EN";
-        String[] args = {print, language, file};
+        String resultName = "src/test/results/result.txt";
+
+        String[] args = {print, language, file, resultName};
         String lastLine = "XXXXXXXXXXXXXXXXXXXX";
-        //when
-        App.main(args);
-        ReversedLinesFileReader fr = new ReversedLinesFileReader(new File("result.txt"));
-
-        //then
-        assertEquals(fr.readLine(), lastLine);
-    }
-
-    @Test(dataProvider = "scenarios")
-    public void wholeGameTestWithRandomScenarios(String testName, String resultName) throws IOException {
-
-        //given
-        String print = "FL";
-        String language = "PL";
-        String[] args = {print, language, testName, resultName};
         //when
         App.main(args);
         ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(resultName));
 
         //then
-        //assertEquals(fr.readLine(), lastLine);
+        assertEquals(fr.readLine(), lastLine);
     }
+
+//    @Test(dataProvider = "scenarios")
+//    public void wholeGameTestWithRandomScenarios(String testName, String resultName) throws IOException {
+//
+//        //given
+//        String print = "FL";
+//        String language = "PL";
+//        String[] args = {print, language, testName, resultName};
+//        //when
+//        App.main(args);
+//        ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(resultName));
+//
+//        //then
+//    }
 
     @AfterSuite
     public void printMessage() {
