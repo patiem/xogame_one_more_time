@@ -1,0 +1,411 @@
+Let's play Tic Tac Toe
+First player name
+Pati
+Are you X or O
+X
+Player Pati - you play as X
+Second player name
+Lolo
+Player Lolo - you play as O
+Who starts? X or O
+X
+Please specify vertical size of a board - must be equal or higher than 3 and less than 100
+3
+Please specify horizontal size of a board - must be equal or higher than 3 and less than 100
+3
+Please specify how many fields are needed for win (minimum 3 but no more than 3)
+Your choice
+3
+Your board has size 3 x 3 - to win you need 3 signs in row
+---------Round 1 begins now----------
+Player Pati starts game
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  2 |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+1
+Your choice is 1
+ ____ ____ ____ 
+|    |    |    |
+|  X |  2 |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+2
+Your choice is 2
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+3
+Your choice is 3
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+4
+Your choice is 4
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+|    |    |    |
+|  O |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+5
+Your choice is 5
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+|    |    |    |
+|  O |  X |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+6
+Your choice is 6
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+|    |    |    |
+|  O |  X |  O |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+7
+Your choice is 7
+ ____ ____ ____ 
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+|    |    |    |
+|  O |  X |  O |
+|____|____|____|
+|    |    |    |
+|  X |  8 |  9 |
+|____|____|____|
+
+Player Pati - you win this round
+Player Pati X : 3 pt ||| Player Lolo O : 0 pt
+---------Round 2 begins now----------
+Player Lolo starts game
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  2 |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+5
+Your choice is 5
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  2 |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+2
+Your choice is 2
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+4
+Your choice is 4
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  O |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+6
+Your choice is 6
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+3
+Your choice is 3
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  O |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+7
+Your choice is 7
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  O |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  X |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+8
+Your choice is 8
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  O |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  X |  O |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+9
+Your choice is 9
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  O |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+1
+Your choice is 1
+ ____ ____ ____ 
+|    |    |    |
+|  O |  X |  O |
+|____|____|____|
+|    |    |    |
+|  O |  O |  X |
+|____|____|____|
+|    |    |    |
+|  X |  O |  X |
+|____|____|____|
+
+Game ends with draw
+Player Pati X : 4 pt ||| Player Lolo O : 1 pt
+---------Round 3 begins now----------
+Player Pati starts game
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  2 |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+2
+Your choice is 2
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  5 |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+5
+Your choice is 5
+ ____ ____ ____ 
+|    |    |    |
+|  1 |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+1
+Your choice is 1
+ ____ ____ ____ 
+|    |    |    |
+|  X |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  4 |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player O
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+4
+Your choice is 4
+ ____ ____ ____ 
+|    |    |    |
+|  X |  X |  3 |
+|____|____|____|
+|    |    |    |
+|  O |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player X
+Please specify number of field where you want to place your sign
+Or any letter to exit game
+3
+Your choice is 3
+ ____ ____ ____ 
+|    |    |    |
+|  X |  X |  X |
+|____|____|____|
+|    |    |    |
+|  O |  O |  6 |
+|____|____|____|
+|    |    |    |
+|  7 |  8 |  9 |
+|____|____|____|
+
+Player Pati - you win this round
+Player Pati X : 7 pt ||| Player Lolo O : 1 pt
+
+XX THE WINNER IS  XX
+XXXXXXXXXXXXXXXXXXXX
+XXXXX  XXXXXX  XXXXX
+XXXXXX  XXXX  XXXXXX
+XXXXXXX  XX  XXXXXXX
+XXXXXXXX    XXXXXXXX
+XXXXXXX  XX  XXXXXXX
+XXXXXX  XXXX  XXXXXX
+XXXXX  XXXXXX  XXXXX
+XXXXXXXXXXXXXXXXXXXX

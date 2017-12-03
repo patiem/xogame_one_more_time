@@ -9,7 +9,7 @@
 
     <groupId>org.epam.javacademy</groupId>
     <artifactId>xogame</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <build>
         <plugins>
