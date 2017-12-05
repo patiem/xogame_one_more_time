@@ -58,8 +58,7 @@ public class RoundManager implements Observer<RoundState>{
             printer.printMsg(Language.MSG_PLAYER, actualPlayer.getStringSign());
             printer.printMsg(Language.MSG_CELL_NUMBER);
 
-            int move = takeMoveFromUser();
-            tryToMakeMove(actualPlayer, move);
+            tryToMakeMove(actualPlayer, takeMoveFromUser());
         }
     }
 

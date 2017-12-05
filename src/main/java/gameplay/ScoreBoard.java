@@ -31,7 +31,7 @@ public class ScoreBoard {
     }
 
     public String[] gameResult() {
-        return new String[] {playerX.getName(), playerX.getPoints().toString(), playerO.getName(), playerO.getPoints().toString()};
+        return new String[]{playerX.getName(), playerX.getPoints().toString(), playerO.getName(), playerO.getPoints().toString()};
     }
 
     public Language getWinner() {

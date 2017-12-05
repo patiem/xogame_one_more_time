@@ -39,19 +39,19 @@ public class AppTest extends DataProviderForApp {
         assertEquals(fr.readLine(), lastLine);
     }
 
-    @Test(dataProvider = "scenarios")
-    public void wholeGameTestWithRandomScenarios(String testName, String resultName) throws IOException {
-
-        //given
-        String print = "FL";
-        String language = "PL";
-        String[] args = {print, language, testName, resultName};
-        //when
-        App.main(args);
-        ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(resultName));
-
-        //then
-    }
+//    @Test(dataProvider = "scenarios")
+//    public void wholeGameTestWithRandomScenarios(String testName, String resultName) throws IOException {
+//
+//        //given
+//        String print = "FL";
+//        String language = "PL";
+//        String[] args = {print, language, testName, resultName};
+//        //when
+//        App.main(args);
+//        ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(resultName));
+//
+//        //then
+//    }
 
     @AfterSuite
     public void printMessage() {
